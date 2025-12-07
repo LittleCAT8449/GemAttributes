@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/oak_planks",
+    "east": "gemstoneengraving:block/curving_table_side",
+    "north": "gemstoneengraving:block/curving_table_front",
+    "particle": "gemstoneengraving:block/curving_table_front",
+    "south": "gemstoneengraving:block/curving_table_side",
+    "up": "gemstoneengraving:block/curving_table_top",
+    "west": "gemstoneengraving:block/curving_table_front"
+  }
+}

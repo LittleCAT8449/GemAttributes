@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "gemstoneengraving:ruby",
+    "gemstoneengraving:sapphire",
+    "gemstoneengraving:slime_core",
+    "gemstoneengraving:conch_pearl"
+  ]
+}
