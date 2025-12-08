@@ -23,6 +23,7 @@ public class GemGroup {
                         output.accept(ItemRegistery.RUBY);
                         output.accept(ItemRegistery.SAPPHIRE);
                         output.accept(ItemRegistery.SLIME_CORE);
+                        output.accept(ItemRegistery.CONCH_PEARL);
                     }).build());
 
     public static void register(IEventBus bus) {

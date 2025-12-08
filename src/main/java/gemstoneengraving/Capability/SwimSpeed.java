@@ -72,7 +72,7 @@ public class SwimSpeed extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.literal("Swim Speed "+1).withColor(0xdfbc12));
+        list.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",1).withColor(0xdfbc12));
 
 
 

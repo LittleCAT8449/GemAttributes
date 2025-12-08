@@ -74,7 +74,7 @@ public class AttackDamage extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
-        list.add(Component.literal("Attack Damage "+4).withColor(0xdfbc12));
+        list.add(Component.translatable("tooltip.gemstoneengraving.attack_damage",4).withColor(0xe8281d));
 
 
 

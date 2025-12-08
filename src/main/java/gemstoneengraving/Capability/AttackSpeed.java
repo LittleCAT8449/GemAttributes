@@ -74,7 +74,7 @@ public class AttackSpeed extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
-        list.add(Component.literal("Attack Speed "+1).withColor(0xdfbc12));
+        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",1).withColor(0x1de8df));
 
 
 
