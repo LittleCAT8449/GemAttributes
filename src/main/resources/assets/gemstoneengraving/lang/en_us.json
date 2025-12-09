@@ -4,11 +4,19 @@
   "item.gemstoneengraving.sapphire": "Sapphire",
   "item.gemstoneengraving.slime_core": "Slime Core",
   "item.gemstoneengraving.conch_pearl":"Conch Pearl",
+  "item.gemstoneengraving.partschinite":"Partschinite",
+  "item.gemstoneengraving.jade":"Jade",
+  "item.gemstoneengraving.phantom_crystal":"Phantom Crystal",
+  "item.gemstoneengraving.aquamarine":"Aquamarine",
 
 
   "tooltip.gemstoneengraving.swim_speed": "Swim Speed +%d",
   "tooltip.gemstoneengraving.attack_speed": "Attack Speed +%d",
   "tooltip.gemstoneengraving.attack_knockback": "Attack Knock Back +%d",
-  "tooltip.gemstoneengraving.attack_damage": "Attack Damage +%d"
+  "tooltip.gemstoneengraving.attack_damage": "Attack Damage +%d",
+  "tooltip.gemstoneengraving.armor": "Armor +%d",
+  "tooltip.gemstoneengraving.armor_toughness": "Armor Toughness +%d",
+  "tooltip.gemstoneengraving.explosion_resistance": "Explosion Resistance +%d",
+  "tooltip.gemstoneengraving.water_movement_efficiency": "Water Movement Efficiency +%d"
 
 }

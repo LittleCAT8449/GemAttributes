@@ -1,8 +1,6 @@
-package gemstoneengraving.Capability;
+package gemstoneengraving;
 
-import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
 import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 

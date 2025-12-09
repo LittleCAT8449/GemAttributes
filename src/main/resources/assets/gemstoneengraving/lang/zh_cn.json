@@ -4,10 +4,18 @@
   "item.gemstoneengraving.sapphire":"蓝宝石",
   "item.gemstoneengraving.slime_core": "史莱姆核心",
   "item.gemstoneengraving.conch_pearl":"海螺珠",
+  "item.gemstoneengraving.partschinite": "橘榴石",
+  "item.gemstoneengraving.jade":"翡翠",
+  "item.gemstoneengraving.phantom_crystal":"幻影水晶",
+  "item.gemstoneengraving.aquamarine": "海蓝宝石",
 
   "tooltip.gemstoneengraving.swim_speed": "游泳速度 +%d",
   "tooltip.gemstoneengraving.attack_speed": "攻击速度 +%d",
   "tooltip.gemstoneengraving.attack_knockback": "攻击击退 +%d",
-  "tooltip.gemstoneengraving.attack_damage": "攻击力 +%d"
+  "tooltip.gemstoneengraving.attack_damage": "攻击力 +%d",
+  "tooltip.gemstoneengraving.armor": "盔甲值 +%d",
+  "tooltip.gemstoneengraving.armor_toughness": "盔甲韧性 +%d",
+  "tooltip.gemstoneengraving.explosion_resistance": "爆炸击退抗性 +%d",
+  "tooltip.gemstoneengraving.water_movement_efficiency": "水中移动效率 +%d"
 
 }

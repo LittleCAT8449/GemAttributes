@@ -24,6 +24,10 @@ public class GemGroup {
                         output.accept(ItemRegistery.SAPPHIRE);
                         output.accept(ItemRegistery.SLIME_CORE);
                         output.accept(ItemRegistery.CONCH_PEARL);
+                        output.accept(ItemRegistery.PARTSCHINITE);
+                        output.accept(ItemRegistery.JADE);
+                        output.accept(ItemRegistery.PHANTOM_CRYSTAL);
+                        output.accept(ItemRegistery.AQUAMARINE);
                     }).build());
 
     public static void register(IEventBus bus) {

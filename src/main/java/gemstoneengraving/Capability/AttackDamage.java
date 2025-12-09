@@ -1,6 +1,7 @@
 package gemstoneengraving.Capability;
 
 
+import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
