@@ -1,6 +1,7 @@
 package gemstoneengraving;
 
 import com.mojang.logging.LogUtils;
+import gemstoneengraving.Bond.BondListener;
 import gemstoneengraving.Item.ItemRegistery;
 import gemstoneengraving.block.BlockRegistery;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,6 +36,9 @@ public class Gemstoneengraving {
 
         NeoForge.EVENT_BUS.register(this);
 
+        NeoForge.EVENT_BUS.register(new BondListener());
+        LOGGER.info("BondListener");
+
         // Register the item to a creative tab
 
 
@@ -61,6 +65,9 @@ public class Gemstoneengraving {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
+
+
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
 
