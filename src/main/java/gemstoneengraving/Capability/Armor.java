@@ -69,6 +69,7 @@ public class Armor extends Item implements ICurioItem {
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
             attributes.getInstance(Attributes.ARMOR).removeModifier(modifier);
+            attributes.getInstance(Attributes.ARMOR).addTransientModifier(modifier);
         }
     }
     @Override

@@ -1,13 +1,17 @@
 package gemstoneengraving.Capability;
 
 
+import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.*;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -70,16 +74,55 @@ public class AttackDamage extends Item implements ICurioItem {
         if(entity!=null){
            AttributeModifier modifier=attributeModifier(slotContext);
            attributes.getInstance(Attributes.ATTACK_DAMAGE).removeModifier(modifier);
+           attributes.getInstance(Attributes.ATTACK_DAMAGE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
         list.add(Component.translatable("tooltip.gemstoneengraving.attack_damage",4).withColor(0xe8281d));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
 
 
 
     }
+
+
+
+
+
+    //羁绊效果
+
+
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+
+        LivingEntity wearer = slotContext.entity();
+        if (wearer == null || wearer.level().isClientSide()) {
+            return;
+        }
+
+
+
+
+        boolean ruby =CurioUtils.isCurio(wearer,ItemRegistery.RUBY.toStack(1).getItem());
+        boolean sapphire =CurioUtils.isCurio(wearer,ItemRegistery.SAPPHIRE.toStack(1).getItem());
+
+        isBondActive = ruby && sapphire;
+
+
+    }
+
+    public static boolean isBondActive = false;
+
+    public static boolean getBoolean(){
+        return isBondActive;
+    }
+
+
+
 
 
 

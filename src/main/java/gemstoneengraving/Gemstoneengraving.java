@@ -29,15 +29,12 @@ public class Gemstoneengraving {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public Gemstoneengraving(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+
         ItemRegistery.register(modEventBus);
         GemGroup.register(modEventBus);
         BlockRegistery.register(modEventBus);
 
-        NeoForge.EVENT_BUS.register(this);
-
-        NeoForge.EVENT_BUS.register(new BondListener());
-        LOGGER.info("BondListener");
+        NeoForge.EVENT_BUS.register(BondListener.class);
 
         // Register the item to a creative tab
 
@@ -46,16 +43,6 @@ public class Gemstoneengraving {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-
-        if (Config.logDirtBlock) LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
-    }
 
     // Add the example block item to the building blocks
 

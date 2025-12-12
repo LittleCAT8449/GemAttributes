@@ -1,6 +1,5 @@
 package gemstoneengraving.Capability;
 
-import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -8,33 +7,34 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.neoforge.common.NeoForgeMod;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class SwimSpeed extends Item implements ICurioItem {
-    public SwimSpeed(Properties properties) {
+public class EntityInteractionRange extends Item implements ICurioItem {
+    public EntityInteractionRange(Properties properties) {
         super(properties);
     }
+
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "swim_speed");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.CONCH_PEARL.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.MAHENGE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                getCount,
-                AttributeModifier.Operation.ADD_VALUE
+                1+(0.2*getCount),
+                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         );
         return modifier;
 
@@ -51,8 +51,8 @@ public class SwimSpeed extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(NeoForgeMod.SWIM_SPEED).removeModifier(modifier);
-            attributes.getInstance(NeoForgeMod.SWIM_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).addTransientModifier(modifier);
 
 
         }
@@ -67,45 +67,18 @@ public class SwimSpeed extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(NeoForgeMod.SWIM_SPEED).removeModifier(modifier);
-            attributes.getInstance(NeoForgeMod.SWIM_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",1).withColor(0xdfbc12));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
-
-
-
-    }
-
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-
-        LivingEntity wearer = slotContext.entity();
-        if (wearer == null || wearer.level().isClientSide()) {
-            return;
-        }
+        list.add(Component.translatable("tooltip.gemstoneengraving.entity_interaction_range",20).withColor(0xfd64a4));
 
 
 
 
-        boolean conch_pearl = CurioUtils.isCurio(wearer,ItemRegistery.CONCH_PEARL.toStack(1).getItem());
-        boolean aquamarine =CurioUtils.isCurio(wearer,ItemRegistery.AQUAMARINE.toStack(1).getItem());
-        boolean topaz = CurioUtils.isCurio(wearer,ItemRegistery.TOPAZ.toStack(1).getItem());
-
-        isBondActive = conch_pearl && aquamarine && topaz;
-
-
-    }
-
-    public static boolean isBondActive = false;
-
-    public static boolean getBoolean(){
-        return isBondActive;
     }
 
 }

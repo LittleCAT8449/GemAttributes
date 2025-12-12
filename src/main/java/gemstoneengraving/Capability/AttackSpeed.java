@@ -70,12 +70,16 @@ public class AttackSpeed extends Item implements ICurioItem {
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
             attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
+            attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
         list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",1).withColor(0x1de8df));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
+        list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
 
 
 

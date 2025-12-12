@@ -69,12 +69,15 @@ public class WaterMovementEfficiency extends Item implements ICurioItem {
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
             attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).removeModifier(modifier);
+            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
         list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",0.1).withColor(0x0060ff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
 
 
 

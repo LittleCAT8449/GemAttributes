@@ -28,6 +28,14 @@ public class GemGroup {
                         output.accept(ItemRegistery.JADE);
                         output.accept(ItemRegistery.PHANTOM_CRYSTAL);
                         output.accept(ItemRegistery.AQUAMARINE);
+                        output.accept(ItemRegistery.TOPAZ);
+                        output.accept(ItemRegistery.HELVITE);
+                        output.accept(ItemRegistery.TSAVORITE);
+                        output.accept(ItemRegistery.AMBER);
+                        output.accept(ItemRegistery.MICA);
+                        output.accept(ItemRegistery.CATSEYE);
+                        output.accept(ItemRegistery.MAHENGE);
+                        output.accept(ItemRegistery.SPINEL);
                     }).build());
 
     public static void register(IEventBus bus) {

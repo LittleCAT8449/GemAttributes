@@ -16,24 +16,25 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class ArmorToughness extends Item implements ICurioItem {
-    public ArmorToughness(Properties properties) {
+public class BlockInteractionRange extends Item implements ICurioItem {
+    public BlockInteractionRange(Properties properties) {
         super(properties);
     }
+
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "armor_toughness");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.JADE.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.SPINEL.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                getCount,
-                AttributeModifier.Operation.ADD_VALUE
+                1+(0.2*getCount),
+                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         );
         return modifier;
 
@@ -50,8 +51,8 @@ public class ArmorToughness extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.ARMOR_TOUGHNESS).removeModifier(modifier);
-            attributes.getInstance(Attributes.ARMOR_TOUGHNESS).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).addTransientModifier(modifier);
 
 
         }
@@ -66,15 +67,20 @@ public class ArmorToughness extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.ARMOR_TOUGHNESS).removeModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.armor_toughness",1).withColor(0xe8281d));
+        list.add(Component.translatable("tooltip.gemstoneengraving.block_interaction_range",20).withColor(0x2eb7ff));
+
 
 
 
     }
+
+
+
 }

@@ -1,5 +1,6 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -67,15 +68,43 @@ public class ExplosionKnockbackResistance extends Item implements ICurioItem {
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
             attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(modifier);
+            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
         list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",0.2).withColor(0x5530a5));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
 
 
 
+    }
+
+    @Override
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
+
+        LivingEntity wearer = slotContext.entity();
+        if (wearer == null || wearer.level().isClientSide()) {
+            return;
+        }
+
+
+
+
+        boolean ruby = CurioUtils.isCurio(wearer,ItemRegistery.RUBY.toStack(1).getItem());
+        boolean phantom_crystal =CurioUtils.isCurio(wearer,ItemRegistery.PHANTOM_CRYSTAL.toStack(1).getItem());
+
+        isBondActive = ruby && phantom_crystal;
+
+
+    }
+
+    public static boolean isBondActive = false;
+
+    public static boolean getBoolean(){
+        return isBondActive;
     }
 
 

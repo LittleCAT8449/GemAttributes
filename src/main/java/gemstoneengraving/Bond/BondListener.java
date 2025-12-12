@@ -1,37 +1,42 @@
 package gemstoneengraving.Bond;
 
-import com.mojang.logging.LogUtils;
+import gemstoneengraving.Bond.Events.*;
+
 import gemstoneengraving.Gemstoneengraving;
-import net.minecraft.client.gui.font.glyphs.BakedGlyph;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.common.NeoForge;
-import org.slf4j.Logger;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.event.CurioCanEquipEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 
+
+@Mod(Gemstoneengraving.MODID)
 public class BondListener {
 
     @SubscribeEvent
+    public static void onLivingHurtEventPre(LivingDamageEvent.Pre event){
+        Frenzy.enhanceDamageEvent(event);
+        Slash.onSlashEvent(event);
 
-    public void onCuriosEquip(CurioCanEquipEvent event){
-        ItemStack stack=event.getStack();
-        SlotContext context =event.getSlotContext();
-        if(!(context.entity() instanceof Player player)){
-            return;
-        }
-
-        if(BondCapability.effectCapability(player)){
-            player.sendSystemMessage(Component.literal("success"));
-        }
 
     }
+    @SubscribeEvent
+    public static void onLivingHurtEventPost(LivingDamageEvent.Post event){
+        BloodThirsty.bloodThirstyHurtEvent(event);
+    }
+    @SubscribeEvent
+    public static void onPlayerXpEvent(PlayerXpEvent.PickupXp event){
+        Absorb.getMoreXpEvent(event);
+
+    }
+    @SubscribeEvent
+    public static void onPlayerTickEvent(PlayerTickEvent.Pre event){
+        NightVision.onNightVision(event);
+        WaterBreathing.onWaterBreathing(event);
+    }
+
 
 
 }
