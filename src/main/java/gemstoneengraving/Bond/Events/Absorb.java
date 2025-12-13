@@ -1,6 +1,9 @@
 package gemstoneengraving.Bond.Events;
 
-import gemstoneengraving.Capability.Luck;
+import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Capability.Tsavorite;
+import gemstoneengraving.Item.ItemRegistery;
+import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,11 +13,14 @@ public class Absorb {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public static void getMoreXpEvent(PlayerXpEvent.PickupXp event){
-        if(Luck.getBoolean()){
+        if(event.getEntity() instanceof Player player){
+            if(CurioUtils.isCurio(player, ItemRegistery.TSAVORITE.get())
+                    &&CurioUtils.isCurio(player,ItemRegistery.AMBER.get())
+                    &&CurioUtils.isCurio(player,ItemRegistery.TOPAZ.get())){
 
-            int new_xp = event.getOrb().value*2;
-            event.getOrb().value=new_xp;
-            LOGGER.info("XP Refix Successfully");
+                event.getOrb().value= event.getOrb().value*2;
+                LOGGER.info("XP Refix Successfully");
+            }
         }
     }
 

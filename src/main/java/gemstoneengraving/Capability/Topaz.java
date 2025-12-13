@@ -16,25 +16,25 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class KnockBackResistance extends Item implements ICurioItem {
+public class Topaz extends Item implements ICurioItem {
 
 
-    public KnockBackResistance(Properties properties) {
+    public Topaz(Properties properties) {
         super(properties);
     }
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_speed");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.PHANTOM_CRYSTAL.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.TOPAZ.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.1*getCount,
+                getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -52,8 +52,8 @@ public class KnockBackResistance extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).removeModifier(modifier);
-            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
+            attributes.getInstance(Attributes.OXYGEN_BONUS).addTransientModifier(modifier);
 
 
         }
@@ -68,17 +68,19 @@ public class KnockBackResistance extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).removeModifier(modifier);
-            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
+            attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.knockback_resistance",0.1).withColor(0xc3a591));
+        list.add(Component.translatable("tooltip.gemstoneengraving.oxygen_bonus",1).withColor(0x0097a7));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
+        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
 
 
 
     }
-
 }

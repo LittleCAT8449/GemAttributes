@@ -1,5 +1,6 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -16,25 +17,23 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Armor extends Item implements ICurioItem {
-
-
-    public Armor(Properties properties) {
+public class Tsavorite extends Item implements ICurioItem {
+    public Tsavorite(Properties properties) {
         super(properties);
     }
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "armor");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "move_speed");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.PARTSCHINITE.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.TSAVORITE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                2*getCount,
+                0.5*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -52,8 +51,8 @@ public class Armor extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.ARMOR).removeModifier(modifier);
-            attributes.getInstance(Attributes.ARMOR).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.LUCK).removeModifier(modifier);
+            attributes.getInstance(Attributes.LUCK).addTransientModifier(modifier);
 
 
         }
@@ -68,16 +67,19 @@ public class Armor extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.ARMOR).removeModifier(modifier);
-            attributes.getInstance(Attributes.ARMOR).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.LUCK).removeModifier(modifier);
+            attributes.getInstance(Attributes.LUCK).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.armor",2).withColor(0xea0c0c));
+        list.add(Component.translatable("tooltip.gemstoneengraving.luck",0.5).withColor(0x6bff65));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
 
 
 
     }
+
 }

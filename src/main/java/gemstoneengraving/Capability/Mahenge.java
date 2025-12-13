@@ -1,6 +1,5 @@
 package gemstoneengraving.Capability;
 
-import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -17,24 +16,25 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class AttackKnockBack extends Item implements ICurioItem {
-    public AttackKnockBack(Properties properties) {
+public class Mahenge extends Item implements ICurioItem {
+    public Mahenge(Properties properties) {
         super(properties);
     }
+
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_speed");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.SLIME_CORE.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.MAHENGE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                1.5*getCount,
-                AttributeModifier.Operation.ADD_VALUE
+                1+(0.2*getCount),
+                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         );
         return modifier;
 
@@ -51,8 +51,8 @@ public class AttackKnockBack extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.ATTACK_KNOCKBACK).removeModifier(modifier);
-            attributes.getInstance(Attributes.ATTACK_KNOCKBACK).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).addTransientModifier(modifier);
 
 
         }
@@ -67,44 +67,18 @@ public class AttackKnockBack extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.ATTACK_KNOCKBACK).removeModifier(modifier);
-            attributes.getInstance(Attributes.ATTACK_KNOCKBACK).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_knockback",1.5).withColor(0x78e81d));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
-
-
-
-    }
-
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-
-        LivingEntity wearer = slotContext.entity();
-        if (wearer == null || wearer.level().isClientSide()) {
-            return;
-        }
+        list.add(Component.translatable("tooltip.gemstoneengraving.entity_interaction_range",20).withColor(0xfd64a4));
 
 
 
 
-        boolean slime_core = CurioUtils.isCurio(wearer,ItemRegistery.SLIME_CORE.toStack(1).getItem());
-        boolean sapphire =CurioUtils.isCurio(wearer,ItemRegistery.SAPPHIRE.toStack(1).getItem());
-
-        isBondActive = slime_core && sapphire;
-
-
-    }
-
-    public static boolean isBondActive = false;
-
-    public static boolean getBoolean(){
-        return isBondActive;
     }
 
 }

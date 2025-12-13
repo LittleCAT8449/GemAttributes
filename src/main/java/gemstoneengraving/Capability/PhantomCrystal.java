@@ -1,5 +1,6 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -16,11 +17,10 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class BlockInteractionRange extends Item implements ICurioItem {
-    public BlockInteractionRange(Properties properties) {
+public class PhantomCrystal extends Item implements ICurioItem {
+    public PhantomCrystal(Properties properties) {
         super(properties);
     }
-
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
@@ -28,13 +28,13 @@ public class BlockInteractionRange extends Item implements ICurioItem {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.SPINEL.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.PHANTOM_CRYSTAL.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                1+(0.2*getCount),
-                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                0.2*getCount,
+                AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
 
@@ -51,8 +51,8 @@ public class BlockInteractionRange extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).removeModifier(modifier);
-            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(modifier);
+            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
 
 
         }
@@ -67,20 +67,19 @@ public class BlockInteractionRange extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).removeModifier(modifier);
-            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(modifier);
+            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.block_interaction_range",20).withColor(0x2eb7ff));
-
-
+        list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",0.2).withColor(0x5530a5));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
 
 
     }
-
 
 
 }

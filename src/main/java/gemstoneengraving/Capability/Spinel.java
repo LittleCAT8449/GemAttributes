@@ -11,14 +11,13 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.neoforge.common.NeoForgeMod;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class WaterMovementEfficiency extends Item implements ICurioItem {
-    public WaterMovementEfficiency(Properties properties) {
+public class Spinel extends Item implements ICurioItem {
+    public Spinel(Properties properties) {
         super(properties);
     }
 
@@ -26,16 +25,16 @@ public class WaterMovementEfficiency extends Item implements ICurioItem {
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "swim_speed");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.AQUAMARINE.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.SPINEL.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.1*getCount,
-                AttributeModifier.Operation.ADD_VALUE
+                1+(0.2*getCount),
+                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         );
         return modifier;
 
@@ -52,8 +51,8 @@ public class WaterMovementEfficiency extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).removeModifier(modifier);
-            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).addTransientModifier(modifier);
 
 
         }
@@ -68,20 +67,20 @@ public class WaterMovementEfficiency extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).removeModifier(modifier);
-            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).removeModifier(modifier);
+            attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",0.1).withColor(0x0060ff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
+        list.add(Component.translatable("tooltip.gemstoneengraving.block_interaction_range",20).withColor(0x2eb7ff));
+
 
 
 
     }
+
 
 
 }

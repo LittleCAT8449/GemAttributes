@@ -1,41 +1,40 @@
 package gemstoneengraving.Capability;
 
-
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.*;
+import net.minecraft.world.entity.ai.attributes.AttributeMap;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
+public class Partschinite extends Item implements ICurioItem {
 
 
-public class AttackSpeed extends Item implements ICurioItem {
-    public AttackSpeed(Properties properties) {
+    public Partschinite(Properties properties) {
         super(properties);
     }
-    //Define Final Damage
+
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_speed");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "armor");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.SAPPHIRE.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.PARTSCHINITE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                getCount,
+                2*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -53,8 +52,8 @@ public class AttackSpeed extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
-            attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.ARMOR).removeModifier(modifier);
+            attributes.getInstance(Attributes.ARMOR).addTransientModifier(modifier);
 
 
         }
@@ -69,24 +68,18 @@ public class AttackSpeed extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
-            attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.ARMOR).removeModifier(modifier);
+            attributes.getInstance(Attributes.ARMOR).addTransientModifier(modifier);
         }
     }
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",1).withColor(0x1de8df));
+        list.add(Component.translatable("tooltip.gemstoneengraving.armor",2).withColor(0xea0c0c));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
-        list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
+        list.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));
 
 
 
     }
-
-
-
-
-
 }

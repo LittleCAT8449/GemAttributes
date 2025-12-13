@@ -1,6 +1,5 @@
 package gemstoneengraving.Capability;
 
-import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -17,23 +16,24 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class ExplosionKnockbackResistance extends Item implements ICurioItem {
-    public ExplosionKnockbackResistance(Properties properties) {
+public class Aquamarine extends Item implements ICurioItem {
+    public Aquamarine(Properties properties) {
         super(properties);
     }
+
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "swim_speed");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.PHANTOM_CRYSTAL.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.AQUAMARINE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.2*getCount,
+                0.1*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -51,8 +51,8 @@ public class ExplosionKnockbackResistance extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(modifier);
-            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).removeModifier(modifier);
+            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
 
 
         }
@@ -67,47 +67,20 @@ public class ExplosionKnockbackResistance extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(modifier);
-            attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).removeModifier(modifier);
+            attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",0.2).withColor(0x5530a5));
+        list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",0.1).withColor(0x0060ff));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
+        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
 
 
 
     }
-
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-
-        LivingEntity wearer = slotContext.entity();
-        if (wearer == null || wearer.level().isClientSide()) {
-            return;
-        }
-
-
-
-
-        boolean ruby = CurioUtils.isCurio(wearer,ItemRegistery.RUBY.toStack(1).getItem());
-        boolean phantom_crystal =CurioUtils.isCurio(wearer,ItemRegistery.PHANTOM_CRYSTAL.toStack(1).getItem());
-
-        isBondActive = ruby && phantom_crystal;
-
-
-    }
-
-    public static boolean isBondActive = false;
-
-    public static boolean getBoolean(){
-        return isBondActive;
-    }
-
-
 
 
 }

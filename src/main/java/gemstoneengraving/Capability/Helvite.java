@@ -1,6 +1,5 @@
 package gemstoneengraving.Capability;
 
-import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -17,24 +16,24 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class SneakingSpeed extends Item implements ICurioItem {
-    public SneakingSpeed(Properties properties) {
+public class Helvite extends Item implements ICurioItem {
+    public Helvite(Properties properties) {
         super(properties);
     }
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "move_speed");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.CATSEYE.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.HELVITE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                1+(0.2*getCount),
-                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                0.05*getCount,
+                AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
 
@@ -51,8 +50,8 @@ public class SneakingSpeed extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.SNEAKING_SPEED).removeModifier(modifier);
-            attributes.getInstance(Attributes.SNEAKING_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.MOVEMENT_SPEED).removeModifier(modifier);
+            attributes.getInstance(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
 
 
         }
@@ -67,45 +66,17 @@ public class SneakingSpeed extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.SNEAKING_SPEED).removeModifier(modifier);
-            attributes.getInstance(Attributes.SNEAKING_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.MOVEMENT_SPEED).removeModifier(modifier);
+            attributes.getInstance(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
         }
     }
-
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.sneaking_speed",20).withColor(0x0097a7));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.nightvision").withColor(0x6fdb16));
+        list.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",0.05).withColor(0x0097a7));
 
 
 
-    }
-
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-
-        LivingEntity wearer = slotContext.entity();
-        if (wearer == null || wearer.level().isClientSide()) {
-            return;
-        }
-
-
-
-
-        boolean catseye = CurioUtils.isCurio(wearer,ItemRegistery.CATSEYE.toStack(1).getItem());
-
-
-        isBondActive = catseye;
-
-
-    }
-
-    public static boolean isBondActive = false;
-
-    public static boolean getBoolean(){
-        return isBondActive;
     }
 
 }

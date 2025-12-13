@@ -16,23 +16,25 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class MovementSpeed extends Item implements ICurioItem {
-    public MovementSpeed(Properties properties) {
+public class Mica extends Item implements ICurioItem {
+
+
+    public Mica(Properties properties) {
         super(properties);
     }
 
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "move_speed");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.HELVITE.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.PHANTOM_CRYSTAL.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.05*getCount,
+                0.1*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -50,8 +52,8 @@ public class MovementSpeed extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.MOVEMENT_SPEED).removeModifier(modifier);
-            attributes.getInstance(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).removeModifier(modifier);
+            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
 
 
         }
@@ -66,14 +68,14 @@ public class MovementSpeed extends Item implements ICurioItem {
 
         if(entity!=null){
             AttributeModifier modifier=attributeModifier(slotContext);
-            attributes.getInstance(Attributes.MOVEMENT_SPEED).removeModifier(modifier);
-            attributes.getInstance(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).removeModifier(modifier);
+            attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",0.05).withColor(0x0097a7));
+        list.add(Component.translatable("tooltip.gemstoneengraving.knockback_resistance",0.1).withColor(0xc3a591));
 
 
 

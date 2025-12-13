@@ -7,11 +7,8 @@ import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.*;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -23,23 +20,23 @@ import java.util.List;
 
 
 
-public class AttackDamage extends Item implements ICurioItem {
-    public AttackDamage(Properties properties) {
+public class Sapphire extends Item implements ICurioItem {
+    public Sapphire(Properties properties) {
         super(properties);
     }
-//Define Final Damage
+    //Define Final Damage
     public static AttributeModifier attributeModifier(SlotContext slotContext) {
 
         LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_damage");
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_speed");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.RUBY.toStack());
+        int getCount = Count.getCurioCount(entity, ItemRegistery.SAPPHIRE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                4*getCount,
+                getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -57,8 +54,8 @@ public class AttackDamage extends Item implements ICurioItem {
 
             AttributeModifier modifier=attributeModifier(slotContext);
             //Remove First
-            attributes.getInstance(Attributes.ATTACK_DAMAGE).removeModifier(modifier);
-            attributes.getInstance(Attributes.ATTACK_DAMAGE).addTransientModifier(modifier);
+            attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
+            attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
 
 
         }
@@ -72,60 +69,21 @@ public class AttackDamage extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-           AttributeModifier modifier=attributeModifier(slotContext);
-           attributes.getInstance(Attributes.ATTACK_DAMAGE).removeModifier(modifier);
-           attributes.getInstance(Attributes.ATTACK_DAMAGE).addTransientModifier(modifier);
+            AttributeModifier modifier=attributeModifier(slotContext);
+            attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
+            attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
         }
     }
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_damage",4).withColor(0xe8281d));
+        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",1).withColor(0x1de8df));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
+        list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
 
 
 
     }
-
-
-
-
-
-    //羁绊效果
-
-
-    @Override
-    public void curioTick(SlotContext slotContext, ItemStack stack) {
-
-        LivingEntity wearer = slotContext.entity();
-        if (wearer == null || wearer.level().isClientSide()) {
-            return;
-        }
-
-
-
-
-        boolean ruby =CurioUtils.isCurio(wearer,ItemRegistery.RUBY.toStack(1).getItem());
-        boolean sapphire =CurioUtils.isCurio(wearer,ItemRegistery.SAPPHIRE.toStack(1).getItem());
-
-        isBondActive = ruby && sapphire;
-
-
-    }
-
-    public static boolean isBondActive = false;
-
-    public static boolean getBoolean(){
-        return isBondActive;
-    }
-
-
-
-
-
-
-
 
 }

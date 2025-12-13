@@ -25,6 +25,7 @@ public class BondListener {
     @SubscribeEvent
     public static void onLivingHurtEventPost(LivingDamageEvent.Post event){
         BloodThirsty.bloodThirstyHurtEvent(event);
+        Wither.onWither(event);
     }
     @SubscribeEvent
     public static void onPlayerXpEvent(PlayerXpEvent.PickupXp event){
@@ -36,6 +37,7 @@ public class BondListener {
         NightVision.onNightVision(event);
         WaterBreathing.onWaterBreathing(event);
     }
+
 
 
 

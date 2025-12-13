@@ -1,6 +1,8 @@
 package gemstoneengraving.Bond.Events;
 
-import gemstoneengraving.Capability.AttackKnockBack;
+import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Capability.SlimeCore;
+import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import org.apache.logging.log4j.LogManager;
@@ -12,11 +14,15 @@ public class Slash {
     public static void onSlashEvent(LivingDamageEvent.Pre event){
 
         if(event.getSource().getEntity() instanceof Player player){
-            if(AttackKnockBack.getBoolean()){
-                LOGGER.info("Slash Successfully");
-                if(player.getRandom().nextDouble() <0.15f){
-                    float new_damage = event.getEntity().getHealth();
-                    event.setNewDamage(new_damage);
+            if(CurioUtils.isCurio(player, ItemRegistery.SLIME_CORE.get())
+                    &&CurioUtils.isCurio(player,ItemRegistery.SAPPHIRE.get())){
+
+                    if(event.getEntity().getHealth()<event.getEntity().getHealth()*0.45){
+                    if(player.getRandom().nextDouble() <0.25f){
+                        LOGGER.info("Slash Successfully");
+                        float new_damage = event.getEntity().getHealth();
+                        event.setNewDamage(new_damage);
+                    }
                 }
             }
 

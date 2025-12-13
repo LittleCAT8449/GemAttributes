@@ -1,6 +1,8 @@
 package gemstoneengraving.Bond.Events;
 
-import gemstoneengraving.Capability.ExplosionKnockbackResistance;
+import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Capability.PhantomCrystal;
+import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +16,7 @@ public class BloodThirsty {
         if (event.getSource().getEntity() instanceof Player player){
 
             float damage =event.getOriginalDamage()/2;
-            if(ExplosionKnockbackResistance.getBoolean()){
+            if(CurioUtils.isCurio(player, ItemRegistery.PHANTOM_CRYSTAL.get())&&CurioUtils.isCurio(player, ItemRegistery.RUBY.get())){
 
 
                 player.setHealth(Math.min(player.getHealth()+damage,player.getMaxHealth()));
