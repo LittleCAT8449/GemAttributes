@@ -42,8 +42,13 @@
   "tooltip.gemstoneengraving.nightvision": "夜视",
   "tooltip.gemstoneengraving.slash": "斩击",
   "tooltip.gemstoneengraving.waterbreathing": "水肺",
-  "tooltip.gemstoneengraving.abhor": "憎恶"
-
-
-
+  "tooltip.gemstoneengraving.abhor": "憎恶",
+  "tooltip.gemstoneengraving.jumpresistance": "免坠",
+  "tooltip.gemstoneengraving.Fixed": "瞳守",
+  "tooltip.gemstoneengraving.perseverance": "不屈",
+  "tooltip.gemstoneengraving.heal": "治愈",
+  "tooltip.gemstoneengraving.immune": "免疫",
+  "tooltip.gemstoneengraving.thelastgasp": "回光返照",
+  "tooltip.gemstoneengraving.invisible": "隐匿",
+  "tooltip.gemstoneengraving.resistance": "固守"
 }

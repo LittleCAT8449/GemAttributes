@@ -77,6 +77,7 @@ public class Tsavorite extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.gemstoneengraving.luck",0.5).withColor(0x6bff65));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
+        list.add(Component.translatable("tooltip.gemstoneengraving.resistance").withColor(0x8cf6fa));
 
 
 

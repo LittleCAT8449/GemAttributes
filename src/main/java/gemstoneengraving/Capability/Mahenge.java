@@ -79,6 +79,7 @@ public class Mahenge extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.gemstoneengraving.entity_interaction_range",20).withColor(0xfd64a4));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.heal").withColor(0x81db47));
+        list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
 
 
 

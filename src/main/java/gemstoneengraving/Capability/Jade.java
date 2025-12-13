@@ -79,6 +79,7 @@ public class Jade extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.gemstoneengraving.safe_fall_distance",1).withColor(0xe8281d));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
+        list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
 
 
 

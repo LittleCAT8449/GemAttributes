@@ -78,6 +78,7 @@ public class Catseye extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.gemstoneengraving.sneaking_speed",20).withColor(0x0097a7));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.nightvision").withColor(0x6fdb16));
+        list.add(Component.translatable("tooltip.gemstoneengraving.Fixed").withColor(0x204300));
 
 
 

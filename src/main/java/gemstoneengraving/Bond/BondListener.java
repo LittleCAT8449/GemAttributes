@@ -6,6 +6,7 @@ import gemstoneengraving.Gemstoneengraving;
 import net.neoforged.bus.api.SubscribeEvent;
 
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.event.GrindstoneEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
@@ -20,6 +21,9 @@ public class BondListener {
         Frenzy.enhanceDamageEvent(event);
         Slash.onSlashEvent(event);
         JumpResistance.onPlayerJumpDamage(event);
+        GuaranteedDamage.onGuaranteedDamage(event);
+        Perseverance.onFatalInjury(event);
+        Resistance.onPlayerGetDamage(event);
 
 
     }
@@ -28,6 +32,7 @@ public class BondListener {
         BloodThirsty.bloodThirstyHurtEvent(event);
         Wither.onWither(event);
         HealthRecover.onPlayerRecoverHealth(event);
+        TheLastGasp.onPlayerEnhanceStrength(event);
     }
     @SubscribeEvent
     public static void onPlayerXpEvent(PlayerXpEvent.PickupXp event){
@@ -38,6 +43,8 @@ public class BondListener {
     public static void onPlayerTickEvent(PlayerTickEvent.Pre event){
         NightVision.onNightVision(event);
         WaterBreathing.onWaterBreathing(event);
+        ImmuneHarm.onImmuneHarm(event);
+        Invisible.onNightVision(event);
     }
 
 

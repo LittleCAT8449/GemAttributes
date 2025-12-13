@@ -46,7 +46,13 @@
   "tooltip.gemstoneengraving.waterbreathing": "Water Breathing",
   "tooltip.gemstoneengraving.abhor": "Abhor",
   "tooltip.gemstoneengraving.heal": "Heal",
-  "tooltip.gemstoneengraving.jumpresistance": "Jump Resistance"
+  "tooltip.gemstoneengraving.jumpresistance": "Jump Resistance",
+  "tooltip.gemstoneengraving.Fixed": "Fixed",
+  "tooltip.gemstoneengraving.perseverance": "Perseverance",
+  "tooltip.gemstoneengraving.immune": "Immune",
+  "tooltip.gemstoneengraving.thelastgasp": "The Last Gasp",
+  "tooltip.gemstoneengraving.invisible": "Hidding",
+  "tooltip.gemstoneengraving.resistance": "Resistance"
 
 
 

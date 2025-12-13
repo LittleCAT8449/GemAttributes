@@ -78,6 +78,7 @@ public class Partschinite extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.gemstoneengraving.armor",2).withColor(0xea0c0c));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));
+        list.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));
 
 
 

@@ -77,6 +77,7 @@ public class SlimeCore extends Item implements ICurioItem {
         list.add(Component.translatable("tooltip.gemstoneengraving.attack_knockback",1.5).withColor(0x78e81d));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
+        list.add(Component.translatable("tooltip.gemstoneengraving.resistance").withColor(0x8cf6fa));
 
 
 
