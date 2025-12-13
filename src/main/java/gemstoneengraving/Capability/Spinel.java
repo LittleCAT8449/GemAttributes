@@ -75,6 +75,8 @@ public class Spinel extends Item implements ICurioItem {
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
         list.add(Component.translatable("tooltip.gemstoneengraving.block_interaction_range",20).withColor(0x2eb7ff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.heal").withColor(0x81db47));
 
 
 

@@ -19,6 +19,7 @@ public class BondListener {
     public static void onLivingHurtEventPre(LivingDamageEvent.Pre event){
         Frenzy.enhanceDamageEvent(event);
         Slash.onSlashEvent(event);
+        JumpResistance.onPlayerJumpDamage(event);
 
 
     }
@@ -26,6 +27,7 @@ public class BondListener {
     public static void onLivingHurtEventPost(LivingDamageEvent.Post event){
         BloodThirsty.bloodThirstyHurtEvent(event);
         Wither.onWither(event);
+        HealthRecover.onPlayerRecoverHealth(event);
     }
     @SubscribeEvent
     public static void onPlayerXpEvent(PlayerXpEvent.PickupXp event){

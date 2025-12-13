@@ -77,6 +77,8 @@ public class Jade extends Item implements ICurioItem {
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
         list.add(Component.translatable("tooltip.gemstoneengraving.safe_fall_distance",1).withColor(0xe8281d));
+        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
 
 
 
