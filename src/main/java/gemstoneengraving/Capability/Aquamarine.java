@@ -1,5 +1,6 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -33,7 +34,7 @@ public class Aquamarine extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.1*getCount,
+                Config.Aquamarine_Value.get() *getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -74,7 +75,7 @@ public class Aquamarine extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",0.1).withColor(0x0060ff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",Config.Aquamarine_Value.get()).withColor(0x0060ff));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
         list.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));

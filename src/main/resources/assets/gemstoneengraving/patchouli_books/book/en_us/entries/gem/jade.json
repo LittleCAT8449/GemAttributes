@@ -1,0 +1,10 @@
+{
+  "name":"Jade",
+  "icon":"gemstoneengraving:jade",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase Safe Fall Height when equipped "
+    }]
+}

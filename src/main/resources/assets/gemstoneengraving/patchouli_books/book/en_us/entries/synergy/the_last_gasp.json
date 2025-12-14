@@ -1,0 +1,10 @@
+{
+  "name":"TheLastGasp",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:mica",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Spinel and Mica are present,When health drops below a certain percentage, you gain a temporary boost of strength."
+    }]
+}

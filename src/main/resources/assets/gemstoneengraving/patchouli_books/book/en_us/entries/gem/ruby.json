@@ -1,0 +1,10 @@
+{
+  "name":"Ruby",
+  "icon":"gemstoneengraving:ruby",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase attack strength when equipped "
+    }]
+}

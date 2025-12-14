@@ -1,0 +1,10 @@
+{
+  "name":"ImmuneHarm",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:jade",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Jade and Conch_Pearl and Mahenge are present,Wont affect by Blindness Slowness Poison and Wither "
+    }]
+}

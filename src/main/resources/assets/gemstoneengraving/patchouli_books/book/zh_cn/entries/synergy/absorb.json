@@ -1,0 +1,10 @@
+{
+  "name":"汲取",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:tsavorite",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备沙弗莱石，琥珀，托帕石时，会额外获得一定比例的经验值"
+    }]
+}

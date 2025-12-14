@@ -1,0 +1,10 @@
+{
+  "name":"马亨盖",
+  "icon":"gemstoneengraving:,mahenge",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时，增加玩家的实体交互距离"
+    }]
+}

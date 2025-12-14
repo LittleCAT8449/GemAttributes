@@ -1,0 +1,10 @@
+{
+  "name":"蓝宝石",
+  "icon":"gemstoneengraving:sapphire",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时，增加玩家的攻击速度"
+    }]
+}

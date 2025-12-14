@@ -1,0 +1,10 @@
+{
+  "name":"橘榴石",
+  "icon":"gemstoneengraving:partschinite",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时增加玩家的盔甲值"
+    }]
+}

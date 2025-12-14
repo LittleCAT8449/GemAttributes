@@ -1,0 +1,10 @@
+{
+  "name":"治愈",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:spinel",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备尖晶石和马亨盖时,当生命值低于一定比例时会获得生命恢复II"
+    }]
+}

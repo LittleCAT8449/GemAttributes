@@ -1,0 +1,10 @@
+{
+  "name":"Partschinite",
+  "icon":"gemstoneengraving:partschinite",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase Armor when equipped "
+    }]
+}

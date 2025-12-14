@@ -1,0 +1,10 @@
+{
+  "name":"夜视",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:slime_core",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备金碧猫眼石时获得夜视"
+    }]
+}

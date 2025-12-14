@@ -1,0 +1,10 @@
+{
+  "name":"Sapphire",
+  "icon":"gemstoneengraving:sapphire",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase attack speed when equipped "
+    }]
+}

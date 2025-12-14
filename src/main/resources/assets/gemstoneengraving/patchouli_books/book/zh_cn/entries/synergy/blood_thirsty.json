@@ -1,0 +1,10 @@
+{
+  "name":"嗜血",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:ruby",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备红宝石和幻影宝石时,会恢复一定比例的血量 "
+    }]
+}

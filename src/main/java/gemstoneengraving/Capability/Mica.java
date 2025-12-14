@@ -1,5 +1,6 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -34,7 +35,7 @@ public class Mica extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.1*getCount,
+                Config.Mica.get()*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -75,7 +76,7 @@ public class Mica extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.knockback_resistance",0.1).withColor(0xc3a591));
+        list.add(Component.translatable("tooltip.gemstoneengraving.knockback_resistance",Config.Mica.get()).withColor(0xc3a591));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.Fixed").withColor(0x204300));
         list.add(Component.translatable("tooltip.gemstoneengraving.thelastgasp").withColor(0xffe567));

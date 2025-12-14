@@ -2,6 +2,7 @@ package gemstoneengraving.Bond.Events;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Capability.SlimeCore;
+import gemstoneengraving.Config;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
@@ -17,8 +18,8 @@ public class Slash {
             if(CurioUtils.isCurio(player, ItemRegistery.SLIME_CORE.get())
                     &&CurioUtils.isCurio(player,ItemRegistery.SAPPHIRE.get())){
 
-                    if(event.getEntity().getHealth()<event.getEntity().getHealth()*0.45){
-                    if(player.getRandom().nextDouble() <0.25f){
+                    if(event.getEntity().getHealth()<event.getEntity().getHealth()* Config.Slash_Under.get()){
+                    if(player.getRandom().nextDouble() <Config.Slash_Probability.get()){
                         LOGGER.info("Slash Successfully");
                         float new_damage = event.getEntity().getHealth();
                         event.setNewDamage(new_damage);

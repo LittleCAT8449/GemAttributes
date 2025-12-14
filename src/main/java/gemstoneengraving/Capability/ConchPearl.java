@@ -1,6 +1,7 @@
 package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -33,7 +34,7 @@ public class ConchPearl extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                getCount,
+                Config.Conch_Pearl.get()*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -74,7 +75,7 @@ public class ConchPearl extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",1).withColor(0xdfbc12));
+        list.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",Config.Conch_Pearl.get()).withColor(0xdfbc12));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
         list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));

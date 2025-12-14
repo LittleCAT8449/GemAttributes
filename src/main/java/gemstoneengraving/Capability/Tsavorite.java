@@ -1,6 +1,7 @@
 package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -33,7 +34,7 @@ public class Tsavorite extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.5*getCount,
+                Config.Tsavorite.get()*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -74,7 +75,7 @@ public class Tsavorite extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.luck",0.5).withColor(0x6bff65));
+        list.add(Component.translatable("tooltip.gemstoneengraving.luck",Config.Tsavorite.get()).withColor(0x6bff65));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
         list.add(Component.translatable("tooltip.gemstoneengraving.resistance").withColor(0x8cf6fa));

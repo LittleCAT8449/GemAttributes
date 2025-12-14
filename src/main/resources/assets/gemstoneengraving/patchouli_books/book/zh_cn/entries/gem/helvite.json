@@ -1,0 +1,10 @@
+{
+  "name":"叶绿石",
+  "icon":"gemstoneengraving:helvite",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时，增加玩家的移动速度"
+    }]
+}

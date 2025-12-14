@@ -1,5 +1,7 @@
 {
 
+  "item.gem_book.name": "宝石属性",
+  "item.gem_book.text": "宝石属性及羁绊介绍",
   "item.gemstoneengraving.ruby": "红宝石",
   "item.gemstoneengraving.sapphire":"蓝宝石",
   "item.gemstoneengraving.slime_core": "史莱姆核心",
@@ -50,5 +52,10 @@
   "tooltip.gemstoneengraving.immune": "免疫",
   "tooltip.gemstoneengraving.thelastgasp": "回光返照",
   "tooltip.gemstoneengraving.invisible": "隐匿",
-  "tooltip.gemstoneengraving.resistance": "固守"
+  "tooltip.gemstoneengraving.resistance": "固守",
+
+  "curios.identifier.gemstone": "宝石",
+
+  "itemGroup.Gemstone": "宝石属性"
+
 }

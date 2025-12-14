@@ -1,0 +1,10 @@
+{
+  "name":"Resistance",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:slime_core",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Slime Core and Tsavorite are present,When injured, only a certain percentage of damage is taken"
+    }]
+}

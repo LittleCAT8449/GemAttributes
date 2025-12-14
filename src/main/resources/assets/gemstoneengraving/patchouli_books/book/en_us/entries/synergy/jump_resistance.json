@@ -1,0 +1,10 @@
+{
+  "name":"JumpResistance",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:partschinite",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Jade and Helvite are present, Immune to fall damage"
+    }]
+}

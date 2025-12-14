@@ -18,7 +18,7 @@ public class GemGroup {
     public static final Supplier<CreativeModeTab> CREATIVE_MODE_TAB_SUPPLIER=
             CREATIVE_MODE_TABS.register("gemstone_tab",()-> CreativeModeTab.builder()
                     .icon(()-> new ItemStack(ItemRegistery.RUBY.get()))
-                    .title(Component.literal("Gemstones"))
+                    .title(Component.translatable("itemGroup.Gemstone"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ItemRegistery.RUBY);
                         output.accept(ItemRegistery.SAPPHIRE);

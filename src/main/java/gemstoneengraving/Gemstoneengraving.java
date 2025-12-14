@@ -3,15 +3,11 @@ package gemstoneengraving;
 import com.mojang.logging.LogUtils;
 import gemstoneengraving.Bond.BondListener;
 import gemstoneengraving.Item.ItemRegistery;
-import gemstoneengraving.block.BlockRegistery;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
@@ -32,7 +28,7 @@ public class Gemstoneengraving {
 
         ItemRegistery.register(modEventBus);
         GemGroup.register(modEventBus);
-        BlockRegistery.register(modEventBus);
+
 
         NeoForge.EVENT_BUS.register(BondListener.class);
 
@@ -41,13 +37,14 @@ public class Gemstoneengraving {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
     }
 
 
     // Add the example block item to the building blocks
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
+
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");

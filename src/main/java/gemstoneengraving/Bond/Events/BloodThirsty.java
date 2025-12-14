@@ -2,6 +2,7 @@ package gemstoneengraving.Bond.Events;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Capability.PhantomCrystal;
+import gemstoneengraving.Config;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
@@ -15,7 +16,7 @@ public class BloodThirsty {
 
         if (event.getSource().getEntity() instanceof Player player){
 
-            float damage =event.getOriginalDamage()/2;
+            float damage =event.getOriginalDamage()/ Config.BloodThirsty.get();
             if(CurioUtils.isCurio(player, ItemRegistery.PHANTOM_CRYSTAL.get())&&CurioUtils.isCurio(player, ItemRegistery.RUBY.get())){
 
 

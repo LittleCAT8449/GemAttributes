@@ -1,0 +1,10 @@
+{
+  "name":"云母",
+  "icon":"gemstoneengraving:mica",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时增加玩家的击退抗性"
+    }]
+}

@@ -1,0 +1,10 @@
+{
+  "name":"Invisible",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:catseye",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Aquamarine and Helvite are present, You become invisible when you crouch."
+    }]
+}

@@ -1,0 +1,10 @@
+{
+  "name":"Phantom Crystal",
+  "icon":"gemstoneengraving:phantom_crystal",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase KnockBack Resistance when equipped "
+    }]
+}

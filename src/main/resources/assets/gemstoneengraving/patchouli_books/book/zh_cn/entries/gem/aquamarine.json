@@ -1,0 +1,10 @@
+{
+  "name":"海蓝宝石",
+  "icon":"gemstoneengraving:aquamarine",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时，增加水中的移动效率"
+    }]
+}

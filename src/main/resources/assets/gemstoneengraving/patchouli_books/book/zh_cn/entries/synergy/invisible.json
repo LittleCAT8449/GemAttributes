@@ -1,0 +1,10 @@
+{
+  "name":"隐匿",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:aquamarine",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备海蓝宝石和叶绿石时,在潜行状态可以获得隐身"
+    }]
+}

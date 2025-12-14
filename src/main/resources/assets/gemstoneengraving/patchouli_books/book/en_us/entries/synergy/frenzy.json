@@ -1,0 +1,10 @@
+{
+  "name":"Frenzy",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:sapphire",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both ruby and sapphire are present, it triggers an increase in the damage by a certain percentage."
+    }]
+}

@@ -1,0 +1,10 @@
+{
+  "name":"史莱姆核心",
+  "icon":"gemstoneengraving:slime_core",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时增加玩家的击退距离"
+    }]
+}

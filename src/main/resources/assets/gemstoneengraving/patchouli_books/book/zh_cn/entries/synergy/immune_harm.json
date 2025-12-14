@@ -1,0 +1,10 @@
+{
+  "name":"免疫",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:jade",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备翡翠，海螺珠和马亨盖时,将会免疫失明，中毒，缓慢，凋零效果"
+    }]
+}

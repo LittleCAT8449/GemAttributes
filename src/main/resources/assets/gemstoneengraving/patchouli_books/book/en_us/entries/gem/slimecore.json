@@ -1,0 +1,10 @@
+{
+  "name":"Slime Core",
+  "icon":"gemstoneengraving:slime_core",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase attack knockback when equipped "
+    }]
+}

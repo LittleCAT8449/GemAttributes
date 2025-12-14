@@ -1,6 +1,7 @@
 package gemstoneengraving.Capability;
 
 
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -34,7 +35,7 @@ public class Mahenge extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                1+(0.2*getCount),
+                1+(Config.Mahenge.get() *getCount),
                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         );
         return modifier;
@@ -76,7 +77,7 @@ public class Mahenge extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.entity_interaction_range",20).withColor(0xfd64a4));
+        list.add(Component.translatable("tooltip.gemstoneengraving.entity_interaction_range",Config.Mahenge.get()*100).withColor(0xfd64a4));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.heal").withColor(0x81db47));
         list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));

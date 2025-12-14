@@ -1,0 +1,10 @@
+{
+  "name":"不屈",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:partschinite",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备橘榴石和幻影水晶时, 当受到致命伤害时会扣除一定比例的经验等级，并抵消一次死亡"
+    }]
+}

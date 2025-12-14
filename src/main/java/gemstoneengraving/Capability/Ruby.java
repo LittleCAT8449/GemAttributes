@@ -2,6 +2,7 @@ package gemstoneengraving.Capability;
 
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -36,7 +37,7 @@ public class Ruby extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                4*getCount,
+                Config.Ruby.get()*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -77,7 +78,7 @@ public class Ruby extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_damage",4).withColor(0xe8281d));
+        list.add(Component.translatable("tooltip.gemstoneengraving.attack_damage",Config.Ruby.get()).withColor(0xe8281d));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
         list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));

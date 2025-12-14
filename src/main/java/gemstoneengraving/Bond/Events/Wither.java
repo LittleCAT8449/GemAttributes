@@ -2,6 +2,7 @@ package gemstoneengraving.Bond.Events;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Capability.Amber;
+import gemstoneengraving.Config;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -14,7 +15,7 @@ import java.util.function.Supplier;
 
 public class Wither {
     public static final Logger LOGGER = LogManager.getLogger();
-    private static final Supplier<MobEffectInstance> wither = () -> new MobEffectInstance(MobEffects.WITHER,200, 2, true, false);
+    private static final Supplier<MobEffectInstance> wither = () -> new MobEffectInstance(MobEffects.WITHER, Config.Wither.get()*100, 2, true, false);
     public static void onWither(LivingDamageEvent.Post event) {
         if(event.getSource().getEntity() instanceof Player player){
             if(CurioUtils.isCurio(player, ItemRegistery.AMBER.get())

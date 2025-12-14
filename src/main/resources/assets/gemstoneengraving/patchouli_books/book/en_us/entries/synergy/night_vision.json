@@ -1,0 +1,10 @@
+{
+  "name":"NightVision",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:slime_core",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When CtasEye is present,Effect player night vision"
+    }]
+}

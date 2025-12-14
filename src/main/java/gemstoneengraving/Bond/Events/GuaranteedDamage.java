@@ -1,6 +1,7 @@
 package gemstoneengraving.Bond.Events;
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -20,7 +21,7 @@ public class GuaranteedDamage {
             if(CurioUtils.isCurio(player, ItemRegistery.MICA.get())
                     &&CurioUtils.isCurio(player, ItemRegistery.CATSEYE.get())) {
 
-                float playerAttackDamage = event.getEntity().getMaxHealth() * 0.05f;
+                float playerAttackDamage = (float) (event.getEntity().getMaxHealth() * Config.GuaranteedDamage.get());
                 LOGGER.info("Damage Refix Successfully2");
 
                 event.setNewDamage(Math.max(OriginalDamage, playerAttackDamage));

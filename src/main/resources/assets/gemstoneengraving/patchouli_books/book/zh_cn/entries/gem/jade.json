@@ -1,0 +1,10 @@
+{
+  "name":"翡翠",
+  "icon":"gemstoneengraving:jade",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时增加玩家的安全摔落高度"
+    }]
+}

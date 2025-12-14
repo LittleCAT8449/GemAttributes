@@ -1,0 +1,10 @@
+{
+  "name":"Aquamarine",
+  "icon":"gemstoneengraving:aquamarine",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase Water move efficiency when equipped "
+    }]
+}

@@ -2,6 +2,7 @@ package gemstoneengraving.Capability;
 
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -36,7 +37,7 @@ public class Sapphire extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                getCount,
+                Config.Sapphire.get()*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -77,7 +78,7 @@ public class Sapphire extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",1).withColor(0x1de8df));
+        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",Config.Sapphire.get()).withColor(0x1de8df));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
         list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));

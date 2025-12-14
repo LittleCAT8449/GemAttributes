@@ -1,0 +1,10 @@
+{
+  "name":"水肺",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:conch_pearl",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备海螺珠和托帕石时可以获得水肺效果"
+    }]
+}

@@ -1,0 +1,10 @@
+{
+  "name":"WaterBreathing",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:conch_pearl",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When Conch Pearl and Aquamarine and Topaz are present,Gain underwater breathing"
+    }]
+}

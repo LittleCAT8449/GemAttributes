@@ -1,0 +1,10 @@
+{
+  "name":"沙弗莱石",
+  "icon":"gemstoneengraving:tsavorite",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"装备时增加玩家的幸运等级"
+    }]
+}

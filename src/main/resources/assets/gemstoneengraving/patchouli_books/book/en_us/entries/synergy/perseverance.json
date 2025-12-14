@@ -1,0 +1,10 @@
+{
+  "name":"Perseverance",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:partschinite",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Partschinite and Phantom Crystal are present, When a creature's health drops below a certain percentage, there is a chance to instantly kill it."
+    }]
+}

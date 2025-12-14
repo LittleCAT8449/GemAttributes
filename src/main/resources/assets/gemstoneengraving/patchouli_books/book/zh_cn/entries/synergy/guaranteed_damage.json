@@ -1,0 +1,10 @@
+{
+  "name":"瞳守",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:catseye",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备云母和金碧猫眼石时,会最少造成相当于被攻击生物血量一定比例的攻击伤害"
+    }]
+}

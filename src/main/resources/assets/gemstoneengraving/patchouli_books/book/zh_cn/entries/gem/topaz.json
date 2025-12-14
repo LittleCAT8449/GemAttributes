@@ -1,0 +1,10 @@
+{
+  "name":"托帕石",
+  "icon":"gemstoneengraving:topaz",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时增加玩家的氧气值"
+    }]
+}

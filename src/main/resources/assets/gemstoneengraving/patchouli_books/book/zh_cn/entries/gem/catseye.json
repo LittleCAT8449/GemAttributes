@@ -1,0 +1,10 @@
+{
+  "name":"金碧猫眼石",
+  "icon":"gemstoneengraving:catseye",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时可以增加玩家的移动速度，同时触发夜视羁绊"
+    }]
+}

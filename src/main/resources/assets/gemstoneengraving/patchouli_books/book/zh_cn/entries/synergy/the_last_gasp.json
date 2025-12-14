@@ -1,0 +1,10 @@
+{
+  "name":"回光返照",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:mica",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备尖晶石和云母时,当生命值低于一定比例时会获得力量II"
+    }]
+}

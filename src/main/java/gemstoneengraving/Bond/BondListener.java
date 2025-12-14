@@ -2,10 +2,12 @@ package gemstoneengraving.Bond;
 
 import gemstoneengraving.Bond.Events.*;
 
+import gemstoneengraving.Config;
 import gemstoneengraving.Gemstoneengraving;
 import net.neoforged.bus.api.SubscribeEvent;
 
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.event.GrindstoneEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
@@ -46,6 +48,7 @@ public class BondListener {
         ImmuneHarm.onImmuneHarm(event);
         Invisible.onNightVision(event);
     }
+
 
 
 

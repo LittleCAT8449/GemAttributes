@@ -1,0 +1,10 @@
+{
+  "name":"Catseye",
+  "icon":"gemstoneengraving:catseye",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increasing Sneaking speed and affecting Night Vision when equipped "
+    }]
+}

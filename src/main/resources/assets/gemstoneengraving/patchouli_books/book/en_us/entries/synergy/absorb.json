@@ -1,0 +1,10 @@
+{
+  "name":"Absorb",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:tsavorite",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When Tsavorite Amber Topaz are present, Gain extra experience points"
+    }]
+}

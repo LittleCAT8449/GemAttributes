@@ -1,5 +1,6 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -34,7 +35,7 @@ public class Partschinite extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                2*getCount,
+                Config.Partschinite.get()*getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -75,7 +76,7 @@ public class Partschinite extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.armor",2).withColor(0xea0c0c));
+        list.add(Component.translatable("tooltip.gemstoneengraving.armor",Config.Partschinite.get()).withColor(0xea0c0c));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));
         list.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));

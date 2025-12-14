@@ -1,0 +1,10 @@
+{
+  "name":"WaterBreathing",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:amber",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Amber and Partschinite are present,Causes the target to wither when attacking a creature"
+    }]
+}

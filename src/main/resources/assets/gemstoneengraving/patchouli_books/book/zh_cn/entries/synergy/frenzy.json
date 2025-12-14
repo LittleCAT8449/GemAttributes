@@ -1,0 +1,10 @@
+{
+  "name":"狂暴",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:sapphire",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备红宝石和蓝宝石时, 会额外造成一定比例的攻击伤害"
+    }]
+}

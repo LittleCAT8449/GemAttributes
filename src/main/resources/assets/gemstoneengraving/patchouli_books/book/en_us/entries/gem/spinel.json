@@ -1,0 +1,10 @@
+{
+  "name":"Spinel",
+  "icon":"gemstoneengraving:spinel",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase Block Interaction Range when equipped "
+    }]
+}

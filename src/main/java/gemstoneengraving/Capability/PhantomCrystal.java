@@ -1,6 +1,7 @@
 package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -33,7 +34,7 @@ public class PhantomCrystal extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.2*getCount,
+                Config.PhantomCrystal.get() *getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -74,7 +75,7 @@ public class PhantomCrystal extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",0.2).withColor(0x5530a5));
+        list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",Config.PhantomCrystal.get()).withColor(0x5530a5));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
         list.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));

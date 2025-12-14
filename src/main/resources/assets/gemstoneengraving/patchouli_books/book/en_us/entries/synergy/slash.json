@@ -1,0 +1,10 @@
+{
+  "name":"Slash",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:sapphire",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Slime Core and Sapphire are present, When a creature's health drops below a certain percentage, there is a chance to instantly kill."
+    }]
+}

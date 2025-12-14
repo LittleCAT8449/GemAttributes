@@ -1,6 +1,7 @@
 package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -33,7 +34,7 @@ public class Amber extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                -0.2*getCount,
+                Config.Amber_Value.get() *getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -74,7 +75,7 @@ public class Amber extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.burning_time",0.2).withColor(0xfd832c));
+        list.add(Component.translatable("tooltip.gemstoneengraving.burning_time",Config.Amber_Value.get()).withColor(0xfd832c));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
         list.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));

@@ -1,0 +1,10 @@
+{
+  "name":"红宝石",
+  "icon":"gemstoneengraving:ruby",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备时，增加玩家的攻击力"
+    }]
+}

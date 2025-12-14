@@ -1,0 +1,10 @@
+{
+  "name":"HealthRecover",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:spinel",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Spinel and Mahenge are present, When the health value drops below a certain percentage, it will receive a 2-point health restoration."
+    }]
+}

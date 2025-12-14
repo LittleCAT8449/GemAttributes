@@ -1,0 +1,10 @@
+{
+  "name":"斩击",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:sapphire",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备史莱姆核心和蓝宝石时，当生物血量低于一定百分比 会有一定概率斩杀"
+    }]
+}

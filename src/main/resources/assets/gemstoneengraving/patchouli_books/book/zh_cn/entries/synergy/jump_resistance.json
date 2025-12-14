@@ -1,0 +1,10 @@
+{
+  "name":"免坠",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:partschinite",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备翡翠和叶绿石时, 不再受到摔落伤害"
+    }]
+}

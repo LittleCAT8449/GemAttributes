@@ -1,5 +1,7 @@
 {
 
+  "item.gem_book.name": "Gemstone Attribute",
+  "item.gem_book.text": "Description of Gemstone Attribute and Synergy",
   "item.gemstoneengraving.ruby": "Ruby",
   "item.gemstoneengraving.sapphire": "Sapphire",
   "item.gemstoneengraving.slime_core": "Slime Core",
@@ -52,7 +54,12 @@
   "tooltip.gemstoneengraving.immune": "Immune",
   "tooltip.gemstoneengraving.thelastgasp": "The Last Gasp",
   "tooltip.gemstoneengraving.invisible": "Hidding",
-  "tooltip.gemstoneengraving.resistance": "Resistance"
+  "tooltip.gemstoneengraving.resistance": "Resistance",
+
+  "curios.identifier.gemstone": "Gemstone",
+  "itemGroup.Gemstone": "Gemstone"
+
+
 
 
 

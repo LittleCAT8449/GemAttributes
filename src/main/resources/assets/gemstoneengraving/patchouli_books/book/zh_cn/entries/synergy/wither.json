@@ -1,0 +1,10 @@
+{
+  "name":"憎恶",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:amber",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备橘榴石和琥珀时，攻击生物会使生物获得凋零效果"
+    }]
+}

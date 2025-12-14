@@ -1,6 +1,7 @@
 package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -33,7 +34,7 @@ public class Catseye extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                1+(0.2*getCount),
+                1+(Config.Cats_Eye.get() *getCount),
                 AttributeModifier.Operation.ADD_MULTIPLIED_BASE
         );
         return modifier;
@@ -75,7 +76,7 @@ public class Catseye extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.sneaking_speed",20).withColor(0x0097a7));
+        list.add(Component.translatable("tooltip.gemstoneengraving.sneaking_speed",Config.Cats_Eye.get()*100).withColor(0x0097a7));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.nightvision").withColor(0x6fdb16));
         list.add(Component.translatable("tooltip.gemstoneengraving.Fixed").withColor(0x204300));

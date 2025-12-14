@@ -1,5 +1,6 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Config;
 import gemstoneengraving.Count;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
@@ -32,7 +33,7 @@ public class Helvite extends Item implements ICurioItem {
 
         AttributeModifier modifier = new AttributeModifier(
                 id,
-                0.05*getCount,
+                Config.Helvite.get() *getCount,
                 AttributeModifier.Operation.ADD_VALUE
         );
         return modifier;
@@ -73,7 +74,7 @@ public class Helvite extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",0.05).withColor(0x0097a7));
+        list.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",Config.Helvite.get()).withColor(0x0097a7));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
         list.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));

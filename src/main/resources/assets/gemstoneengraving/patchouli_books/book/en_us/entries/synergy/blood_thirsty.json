@@ -1,0 +1,10 @@
+{
+  "name":"BloodThirsty",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:ruby",
+  "pages":[
+    {
+      "type":"text",
+      "text":"When both Ruby and Phantom Crystal are present,it will restore a certain percentage of health during the attack. "
+    }]
+}

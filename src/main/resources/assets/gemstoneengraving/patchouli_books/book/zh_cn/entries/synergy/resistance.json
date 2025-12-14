@@ -1,0 +1,10 @@
+{
+  "name":"固守",
+  "category":"gemstoneengraving:synergy",
+  "icon":"gemstoneengraving:slime_core",
+  "pages":[
+    {
+      "type":"text",
+      "text":"当装备史莱姆核心和沙弗莱石时，只会受到一定比例的伤害"
+    }]
+}

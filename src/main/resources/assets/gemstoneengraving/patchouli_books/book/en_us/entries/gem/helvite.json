@@ -1,0 +1,10 @@
+{
+  "name":"Helvite",
+  "icon":"gemstoneengraving:helvite",
+  "category":"gemstoneengraving:attribute",
+  "pages":[
+    {
+      "type":"text",
+      "text":"Increase Movement Speed when equipped "
+    }]
+}
