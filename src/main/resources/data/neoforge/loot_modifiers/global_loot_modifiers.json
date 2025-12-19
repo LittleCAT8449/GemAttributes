@@ -1,0 +1,20 @@
+{
+    "entries": [
+        "gemstoneengraving:chests/ruined_portal",
+        "gemstoneengraving:chests/stronghold_library",
+        "gemstoneengraving:chests/buried_treasure",
+        "gemstoneengraving:chests/stronghold_corridor",
+        "gemstoneengraving:chests/underwater_ruin_small",
+        "gemstoneengraving:chests/jungle_temple",
+        "gemstoneengraving:chests/abandoned_mineshaft",
+        "gemstoneengraving:chests/simple_dungeon",
+        "gemstoneengraving:chests/ancient_city_ice_box",
+        "gemstoneengraving:chests/desert_pyramid",
+        "gemstoneengraving:chests/end_city_treasure",
+        "gemstoneengraving:chests/nether_bridge",
+        "gemstoneengraving:chests/bastion_treasure",
+        "gemstoneengraving:chests/shipwreck_treasure",
+        "gemstoneengraving:chests/ancient_city"
+    ],
+    "replace": false
+}

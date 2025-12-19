@@ -1,0 +1,10 @@
+{
+    "conditions": [
+        {
+            "condition": "neoforge:loot_table_id",
+            "loot_table_id": "minecraft:chests/jungle_temple"
+        }
+    ],
+    "table": "gemstoneengraving:chests/jungle_temple",
+    "type": "neoforge:add_table"
+}

@@ -26,6 +26,7 @@ public class ItemRegistery {
     public static final DeferredItem<Item> CATSEYE = ITEMS.register("catseye", ()-> new Catseye(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> MAHENGE =ITEMS.register("mahenge", ()-> new Mahenge(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SPINEL = ITEMS.register("spinel", ()-> new Spinel(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> Book = ITEMS.register("book", ()-> new Item(new Item.Properties().stacksTo(1)));
 
 
 

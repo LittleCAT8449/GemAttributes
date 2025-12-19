@@ -4,6 +4,6 @@
   "landing_text": "item.gem_book.text",
   "version": 1,
   "use_resource_pack": true,
-  "creative_tab": "gemstoneengraving:gemstone_tab"
-
+  "creative_tab": "gemstoneengraving:gemstone_tab",
+  "model": "gemstoneengraving:book"
 }

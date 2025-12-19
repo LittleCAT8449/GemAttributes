@@ -1,10 +1,10 @@
 {
-  "name":"ConchPearl",
+  "name":"海螺珠",
   "icon":"gemstoneengraving:conch_pearl",
   "category":"gemstoneengraving:attribute",
   "pages":[
     {
       "type":"text",
-      "text":"当装备时增加玩家的游泳速度"
+      "text":"当装备时增加玩家的游泳速度，可以从水下废墟中获得"
     }]
 }

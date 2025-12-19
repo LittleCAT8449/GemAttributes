@@ -1,0 +1,20 @@
+{
+    "pools": [
+        {
+            "entries": [
+                {
+                    "conditions": [
+                        {
+                            "chance": 0.5,
+                            "condition": "minecraft:random_chance"
+                        }
+                    ],
+                    "name": "gemstoneengraving:tsavorite",
+                    "type": "minecraft:item"
+                }
+            ],
+            "rolls": 1
+        }
+    ],
+    "type": "minecraft:chest"
+}

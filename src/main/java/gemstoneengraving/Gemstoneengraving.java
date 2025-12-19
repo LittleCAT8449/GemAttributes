@@ -1,22 +1,33 @@
 package gemstoneengraving;
 
 import com.mojang.logging.LogUtils;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import gemstoneengraving.Bond.BondListener;
 import gemstoneengraving.Item.ItemRegistery;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.slf4j.Logger;
+
+import java.util.function.Supplier;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Gemstoneengraving.MODID)
 public class Gemstoneengraving {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "gemstoneengraving";
+
+
+
+
+
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "gemstoneengraving" namespace
@@ -32,11 +43,16 @@ public class Gemstoneengraving {
 
         NeoForge.EVENT_BUS.register(BondListener.class);
 
+
+
         // Register the item to a creative tab
 
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+
+
 
     }
 
