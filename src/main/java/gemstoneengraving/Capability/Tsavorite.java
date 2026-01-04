@@ -2,7 +2,7 @@ package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -23,25 +23,6 @@ public class Tsavorite extends Item implements ICurioItem {
         super(properties);
     }
 
-    public static AttributeModifier attributeModifier(SlotContext slotContext) {
-
-        LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "move_speed");
-        AttributeMap attributes = entity.getAttributes();
-
-        int getCount = Count.getCurioCount(entity, ItemRegistery.TSAVORITE.toStack());
-
-
-        AttributeModifier modifier = new AttributeModifier(
-                id,
-                Config.Tsavorite.get()*getCount,
-                AttributeModifier.Operation.ADD_VALUE
-        );
-        return modifier;
-
-    }
-
-
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
 
@@ -50,7 +31,7 @@ public class Tsavorite extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TSAVORITE.toStack(), Config.Tsavorite.get(),"ADD_VALUE","move_speed");
             //Remove First
             attributes.getInstance(Attributes.LUCK).removeModifier(modifier);
             attributes.getInstance(Attributes.LUCK).addTransientModifier(modifier);
@@ -67,7 +48,7 @@ public class Tsavorite extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TSAVORITE.toStack(), Config.Tsavorite.get(),"ADD_VALUE","move_speed");
             attributes.getInstance(Attributes.LUCK).removeModifier(modifier);
             attributes.getInstance(Attributes.LUCK).addTransientModifier(modifier);
         }

@@ -2,7 +2,7 @@ package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -31,7 +31,7 @@ public class Jade extends Item implements ICurioItem {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "safe_fall_distance");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.JADE.toStack());
+        int getCount = CurioUtils.getCurioCount(entity, ItemRegistery.JADE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
@@ -52,7 +52,7 @@ public class Jade extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.JADE.toStack(), Config.Jade.get(),"ADD_VALUE","safe_fall_distance");
             //Remove First
             attributes.getInstance(Attributes.SAFE_FALL_DISTANCE).removeModifier(modifier);
             attributes.getInstance(Attributes.SAFE_FALL_DISTANCE).addTransientModifier(modifier);
@@ -69,7 +69,7 @@ public class Jade extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.JADE.toStack(), Config.Jade.get(),"ADD_VALUE","safe_fall_distance");
             attributes.getInstance(Attributes.SAFE_FALL_DISTANCE).removeModifier(modifier);
             attributes.getInstance(Attributes.SAFE_FALL_DISTANCE).addTransientModifier(modifier);
         }

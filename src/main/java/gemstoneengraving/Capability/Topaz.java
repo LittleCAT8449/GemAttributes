@@ -1,7 +1,8 @@
 package gemstoneengraving.Capability;
 
+import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -24,25 +25,6 @@ public class Topaz extends Item implements ICurioItem {
         super(properties);
     }
 
-    public static AttributeModifier attributeModifier(SlotContext slotContext) {
-
-        LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_speed");
-        AttributeMap attributes = entity.getAttributes();
-
-        int getCount = Count.getCurioCount(entity, ItemRegistery.TOPAZ.toStack());
-
-
-        AttributeModifier modifier = new AttributeModifier(
-                id,
-                Config.Topaz.get()*getCount,
-                AttributeModifier.Operation.ADD_VALUE
-        );
-        return modifier;
-
-    }
-
-
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
 
@@ -51,7 +33,7 @@ public class Topaz extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TOPAZ.toStack(), Config.Topaz.get(),"ADD_VALUE","attack_speed");
             //Remove First
             attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
             attributes.getInstance(Attributes.OXYGEN_BONUS).addTransientModifier(modifier);
@@ -68,7 +50,7 @@ public class Topaz extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TOPAZ.toStack(), Config.Topaz.get(),"ADD_VALUE","attack_speed");
             attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
             attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
         }

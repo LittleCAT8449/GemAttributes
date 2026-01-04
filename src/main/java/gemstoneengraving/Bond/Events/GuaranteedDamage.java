@@ -19,13 +19,13 @@ public class GuaranteedDamage {
         if(event.getSource().getEntity() instanceof Player player){
             LOGGER.info("Damage Refix Successfully1");
             if(CurioUtils.isCurio(player, ItemRegistery.MICA.get())
-                    &&CurioUtils.isCurio(player, ItemRegistery.CATSEYE.get())) {
+                  &&CurioUtils.isCurio(player, ItemRegistery.CATSEYE.get())) {
 
                 float playerAttackDamage = (float) (event.getEntity().getMaxHealth() * Config.GuaranteedDamage.get());
                 LOGGER.info("Damage Refix Successfully2");
 
                 event.setNewDamage(Math.max(OriginalDamage, playerAttackDamage));
-            }
+           }
         }
 
 

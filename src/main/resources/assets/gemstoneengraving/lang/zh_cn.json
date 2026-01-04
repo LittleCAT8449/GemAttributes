@@ -31,7 +31,7 @@
   "tooltip.gemstoneengraving.explosion_resistance": "爆炸击退抗性 +%d",
   "tooltip.gemstoneengraving.movement_speed": "移速 +%d",
   "tooltip.gemstoneengraving.luck": "幸运 +%d",
-  "tooltip.gemstoneengraving.burning_time": "燃烧时间 -%d",
+  "tooltip.gemstoneengraving.burning_time": "燃烧时间 %d",
   "tooltip.gemstoneengraving.knockback_resistance": "击退抗性 +%d",
   "tooltip.gemstoneengraving.sneaking_speed": "潜行移速 +%d%%",
   "tooltip.gemstoneengraving.entity_interaction_range": "攻击距离 +%d%%",

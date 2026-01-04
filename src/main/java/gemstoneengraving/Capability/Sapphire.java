@@ -3,7 +3,7 @@ package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -26,23 +26,6 @@ public class Sapphire extends Item implements ICurioItem {
         super(properties);
     }
     //Define Final Damage
-    public static AttributeModifier attributeModifier(SlotContext slotContext) {
-
-        LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_speed");
-        AttributeMap attributes = entity.getAttributes();
-
-        int getCount = Count.getCurioCount(entity, ItemRegistery.SAPPHIRE.toStack());
-
-
-        AttributeModifier modifier = new AttributeModifier(
-                id,
-                Config.Sapphire.get()*getCount,
-                AttributeModifier.Operation.ADD_VALUE
-        );
-        return modifier;
-
-    }
 
 
     @Override
@@ -53,7 +36,7 @@ public class Sapphire extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.SAPPHIRE.toStack(), Config.Sapphire.get(),"ADD_VALUE","attack_speed");
             //Remove First
             attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
@@ -70,7 +53,7 @@ public class Sapphire extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.SAPPHIRE.toStack(), Config.Sapphire.get(),"ADD_VALUE","attack_speed");
             attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
         }

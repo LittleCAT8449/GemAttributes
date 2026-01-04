@@ -3,6 +3,7 @@ package gemstoneengraving.Bond.Events;
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Capability.Tsavorite;
 import gemstoneengraving.Config;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
@@ -20,7 +21,8 @@ public class Absorb {
                     &&CurioUtils.isCurio(player,ItemRegistery.TOPAZ.get())){
 
                 event.getOrb().value= event.getOrb().value* Config.Absorb.get();
-                LOGGER.info("XP Refix Successfully");
+                LOGGER.info("XP Refix "+event.getOrb().value+"Value");
+
             }
         }
     }

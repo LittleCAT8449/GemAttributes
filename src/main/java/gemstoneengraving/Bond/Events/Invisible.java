@@ -15,7 +15,7 @@ public class Invisible {
     public static void onNightVision(PlayerTickEvent.Pre event) {
 
         if(event.getEntity() instanceof Player player) {
-            if(CurioUtils.isCurio(player, ItemRegistery.AQUAMARINE.get())
+           if(CurioUtils.isCurio(player, ItemRegistery.AQUAMARINE.get())
                     &&CurioUtils.isCurio(player,ItemRegistery.HELVITE.get())
                     &&player.isShiftKeyDown()) {
                 event.getEntity().addEffect(invisible.get());

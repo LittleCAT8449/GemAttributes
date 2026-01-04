@@ -20,9 +20,9 @@ public class ImmuneHarm {
 
         if(event.getEntity() instanceof Player player) {
 
-            if (CurioUtils.isCurio(player, ItemRegistery.JADE.get())
+          if (CurioUtils.isCurio(player, ItemRegistery.JADE.get())
             && CurioUtils.isCurio(player,ItemRegistery.CONCH_PEARL.get())
-            && CurioUtils.isCurio(player,ItemRegistery.MAHENGE.get())){
+           && CurioUtils.isCurio(player,ItemRegistery.MAHENGE.get())){
 
                 if(player.hasEffect(MobEffects.POISON)||player.hasEffect(MobEffects.WITHER)
                 ||player.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)||player.hasEffect(MobEffects.BLINDNESS)){

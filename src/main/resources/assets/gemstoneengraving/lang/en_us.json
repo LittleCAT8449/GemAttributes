@@ -32,7 +32,7 @@
   "tooltip.gemstoneengraving.explosion_resistance": "Explosion KnockBack Resistance +%d",
   "tooltip.gemstoneengraving.movement_speed": "Movement Speed +%d",
   "tooltip.gemstoneengraving.luck": "Luck +%d",
-  "tooltip.gemstoneengraving.burning_time": "Burning Time -%d",
+  "tooltip.gemstoneengraving.burning_time": "Burning Time %d",
   "tooltip.gemstoneengraving.knockback_resistance": "KnockBack Resistance +%d",
   "tooltip.gemstoneengraving.sneaking_speed": "Sneaking Speed +%d%%",
   "tooltip.gemstoneengraving.entity_interaction_range": "Entity Interaction Range +%d%%",

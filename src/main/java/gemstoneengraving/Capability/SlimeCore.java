@@ -2,7 +2,7 @@ package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -23,25 +23,6 @@ public class SlimeCore extends Item implements ICurioItem {
         super(properties);
     }
 
-    public static AttributeModifier attributeModifier(SlotContext slotContext) {
-
-        LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "attack_speed");
-        AttributeMap attributes = entity.getAttributes();
-
-        int getCount = Count.getCurioCount(entity, ItemRegistery.SLIME_CORE.toStack());
-
-
-        AttributeModifier modifier = new AttributeModifier(
-                id,
-                Config.Slime_Core.get() *getCount,
-                AttributeModifier.Operation.ADD_VALUE
-        );
-        return modifier;
-
-    }
-
-
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
 
@@ -50,7 +31,7 @@ public class SlimeCore extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.SLIME_CORE.toStack(), Config.Slime_Core.get(),"ADD_VALUE","attack_knockback");
             //Remove First
             attributes.getInstance(Attributes.ATTACK_KNOCKBACK).removeModifier(modifier);
             attributes.getInstance(Attributes.ATTACK_KNOCKBACK).addTransientModifier(modifier);
@@ -67,7 +48,7 @@ public class SlimeCore extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.SLIME_CORE.toStack(), Config.Slime_Core.get(),"ADD_VALUE","attack_knockback");
             attributes.getInstance(Attributes.ATTACK_KNOCKBACK).removeModifier(modifier);
             attributes.getInstance(Attributes.ATTACK_KNOCKBACK).addTransientModifier(modifier);
         }

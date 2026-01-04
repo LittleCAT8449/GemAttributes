@@ -7,6 +7,8 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.List;
+
 public class Config {
 
     public static final Logger LOGGER = LogManager.getLogger();
@@ -71,6 +73,8 @@ public class Config {
     public static final ModConfigSpec.IntValue The_Last_Gasp_Duration=BUILDER.comment("Strength Duration.,Range 1~120").defineInRange("last_duration",60,1,120);
 
     public static final ModConfigSpec.IntValue Wither=BUILDER.comment("The duration of the decay effect that targets hostile creatures when attacking them..,Range 1~120").defineInRange("last_duration",60,1,120);
+
+    public static final ModConfigSpec.ConfigValue<String>  Absorb_Bond = BUILDER.comment("The list of items that can get absorb synergy").define("absorb_bond", "gemstoneengraving:catseye");
 
     static final ModConfigSpec SPEC = BUILDER.build();
 

@@ -2,7 +2,7 @@ package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -29,7 +29,7 @@ public class ConchPearl extends Item implements ICurioItem {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "swim_speed");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.CONCH_PEARL.toStack());
+        int getCount = CurioUtils.getCurioCount(entity, ItemRegistery.CONCH_PEARL.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
@@ -50,7 +50,7 @@ public class ConchPearl extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.CONCH_PEARL.toStack(), Config.Conch_Pearl.get(),"ADD_VALUE","swim_speed");
             //Remove First
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).removeModifier(modifier);
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).addTransientModifier(modifier);
@@ -67,7 +67,7 @@ public class ConchPearl extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.CONCH_PEARL.toStack(), Config.Conch_Pearl.get(),"ADD_VALUE","swim_speed");
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).removeModifier(modifier);
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).addTransientModifier(modifier);
         }

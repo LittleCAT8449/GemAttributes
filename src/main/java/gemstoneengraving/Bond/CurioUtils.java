@@ -11,6 +11,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CurioUtils {
 
@@ -49,4 +50,22 @@ public class CurioUtils {
         }
         return false;
     }
+
+    public static int getCurioCount(LivingEntity livingEntity,ItemStack targetItem){
+
+        AtomicInteger count=new AtomicInteger(0);
+        CuriosApi.getCuriosInventory(livingEntity).ifPresent(iCuriosItemHandler -> {
+            iCuriosItemHandler.getCurios().forEach((slotType,slotHandler)->{
+                for(int i=0;i<slotHandler.getSlots();i++){
+                    ItemStack stack=slotHandler.getStacks().getStackInSlot(i);
+                    if(stack.getItem()==targetItem.getItem()){
+                        count.incrementAndGet();
+                    }
+                }
+            });
+        });
+        return count.get();
+    }
+
+
 };

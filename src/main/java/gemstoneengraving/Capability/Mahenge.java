@@ -1,8 +1,9 @@
 package gemstoneengraving.Capability;
 
 
+import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -23,26 +24,6 @@ public class Mahenge extends Item implements ICurioItem {
         super(properties);
     }
 
-
-    public static AttributeModifier attributeModifier(SlotContext slotContext) {
-
-        LivingEntity entity = slotContext.entity();
-        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
-        AttributeMap attributes = entity.getAttributes();
-
-        int getCount = Count.getCurioCount(entity, ItemRegistery.MAHENGE.toStack());
-
-
-        AttributeModifier modifier = new AttributeModifier(
-                id,
-                1+(Config.Mahenge.get() *getCount),
-                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
-        );
-        return modifier;
-
-    }
-
-
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
 
@@ -51,7 +32,7 @@ public class Mahenge extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.MAHENGE.toStack(), Config.Mahenge.get(),"ADD_MULTIPLIED_BASE","entity_interaction_range");
             //Remove First
             attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).removeModifier(modifier);
             attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).addTransientModifier(modifier);
@@ -69,7 +50,7 @@ public class Mahenge extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.MAHENGE.toStack(), Config.Mahenge.get(),"ADD_MULTIPLIED_BASE","entity_interaction_range");
             attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).removeModifier(modifier);
             attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).addTransientModifier(modifier);
         }

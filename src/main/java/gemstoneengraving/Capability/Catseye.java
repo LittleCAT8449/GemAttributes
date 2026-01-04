@@ -2,7 +2,7 @@ package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
-import gemstoneengraving.Count;
+import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -29,7 +29,7 @@ public class Catseye extends Item implements ICurioItem {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gemstoneengraving", "phantom_crystal");
         AttributeMap attributes = entity.getAttributes();
 
-        int getCount = Count.getCurioCount(entity, ItemRegistery.CATSEYE.toStack());
+        int getCount =CurioUtils.getCurioCount(entity, ItemRegistery.CATSEYE.toStack());
 
 
         AttributeModifier modifier = new AttributeModifier(
@@ -50,7 +50,7 @@ public class Catseye extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.CATSEYE.toStack(), Config.Cats_Eye.get(),"ADD_MULTIPLIED_BASE","sneaking_speed");
             //Remove First
             attributes.getInstance(Attributes.SNEAKING_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.SNEAKING_SPEED).addTransientModifier(modifier);
@@ -67,7 +67,7 @@ public class Catseye extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=attributeModifier(slotContext);
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.CATSEYE.toStack(), Config.Cats_Eye.get(),"ADD_MULTIPLIED_BASE","sneaking_speed");
             attributes.getInstance(Attributes.SNEAKING_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.SNEAKING_SPEED).addTransientModifier(modifier);
         }
