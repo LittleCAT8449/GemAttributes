@@ -33,7 +33,7 @@ public class Mica extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.MICA.toStack(), Config.Mica.get(),"ADD_VALUE","knockback_resistance");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.MICA.toStack(), Config.Mica.get(),"ADD_MULTIPLIED_BASE","knockback_resistance");
             //Remove First
             attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).removeModifier(modifier);
             attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
@@ -50,7 +50,7 @@ public class Mica extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.MICA.toStack(), Config.Mica.get(),"ADD_VALUE","knockback_resistance");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.MICA.toStack(), Config.Mica.get(),"ADD_MULTIPLIED_BASE","knockback_resistance");
             attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).removeModifier(modifier);
             attributes.getInstance(Attributes.KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
         }
@@ -58,7 +58,7 @@ public class Mica extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.knockback_resistance",Config.Mica.get()).withColor(0xc3a591));
+        list.add(Component.translatable("tooltip.gemstoneengraving.knockback_resistance",Config.Mica.get()*100).withColor(0xc3a591));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.Fixed").withColor(0x204300));
         list.add(Component.translatable("tooltip.gemstoneengraving.thelastgasp").withColor(0xffe567));

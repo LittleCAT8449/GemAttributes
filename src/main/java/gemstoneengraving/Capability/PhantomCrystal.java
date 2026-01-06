@@ -30,7 +30,7 @@ public class PhantomCrystal extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.PHANTOM_CRYSTAL.toStack(), Config.PhantomCrystal.get(),"ADD_VALUE","explosion_knockback_resistance");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.PHANTOM_CRYSTAL.toStack(), Config.PhantomCrystal.get(),"ADD_MULTIPLIED_BASE","explosion_knockback_resistance");
             //Remove First
             attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(modifier);
             attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
@@ -47,7 +47,7 @@ public class PhantomCrystal extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.PHANTOM_CRYSTAL.toStack(), Config.PhantomCrystal.get(),"ADD_VALUE","explosion_knockback_resistance");
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.PHANTOM_CRYSTAL.toStack(), Config.PhantomCrystal.get(),"ADD_MULTIPLIED_BASE","explosion_knockback_resistance");
             attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(modifier);
             attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
         }
@@ -55,7 +55,7 @@ public class PhantomCrystal extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",Config.PhantomCrystal.get()).withColor(0x5530a5));
+        list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",Config.PhantomCrystal.get()*100).withColor(0x5530a5));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
         list.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));

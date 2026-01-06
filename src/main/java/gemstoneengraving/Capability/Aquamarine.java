@@ -31,7 +31,7 @@ public class Aquamarine extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.AQUAMARINE.toStack(), Config.Aquamarine_Value.get(),"ADD_VALUE","swim_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.AQUAMARINE.toStack(), Config.Aquamarine_Value.get(),"ADD_MULTIPLIED_BASE","swim_speed");
             //Remove First
             attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).removeModifier(modifier);
             attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
@@ -48,7 +48,7 @@ public class Aquamarine extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.AQUAMARINE.toStack(), Config.Aquamarine_Value.get(),"ADD_VALUE","swim_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.AQUAMARINE.toStack(), Config.Aquamarine_Value.get(),"ADD_MULTIPLIED_BASE","swim_speed");
             attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).removeModifier(modifier);
             attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
         }
@@ -56,7 +56,7 @@ public class Aquamarine extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",Config.Aquamarine_Value.get()).withColor(0x0060ff));
+        list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",Config.Aquamarine_Value.get()*100).withColor(0x0060ff));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
         list.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));

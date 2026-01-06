@@ -31,7 +31,7 @@ public class Helvite extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.HELVITE.toStack(), Config.Helvite.get(),"ADD_VALUE","move_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.HELVITE.toStack(), Config.Helvite.get(),"ADD_MULTIPLIED_BASE","move_speed");
             //Remove First
             attributes.getInstance(Attributes.MOVEMENT_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
@@ -48,7 +48,7 @@ public class Helvite extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.HELVITE.toStack(), Config.Helvite.get(),"ADD_VALUE","move_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.HELVITE.toStack(), Config.Helvite.get(),"ADD_MULTIPLIED_BASE","move_speed");
             attributes.getInstance(Attributes.MOVEMENT_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
         }
@@ -56,7 +56,7 @@ public class Helvite extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",Config.Helvite.get()).withColor(0x0097a7));
+        list.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",Config.Helvite.get()*100).withColor(0x0097a7));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
         list.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));

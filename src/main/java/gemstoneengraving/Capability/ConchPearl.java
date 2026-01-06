@@ -50,7 +50,7 @@ public class ConchPearl extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.CONCH_PEARL.toStack(), Config.Conch_Pearl.get(),"ADD_VALUE","swim_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.CONCH_PEARL.toStack(), Config.Conch_Pearl.get(),"ADD_MULTIPLIED_BASE","swim_speed");
             //Remove First
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).removeModifier(modifier);
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).addTransientModifier(modifier);
@@ -67,7 +67,7 @@ public class ConchPearl extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.CONCH_PEARL.toStack(), Config.Conch_Pearl.get(),"ADD_VALUE","swim_speed");
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.CONCH_PEARL.toStack(), Config.Conch_Pearl.get(),"ADD_MULTIPLIED_BASE","swim_speed");
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).removeModifier(modifier);
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).addTransientModifier(modifier);
         }
@@ -75,7 +75,7 @@ public class ConchPearl extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",Config.Conch_Pearl.get()).withColor(0xdfbc12));
+        list.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",Config.Conch_Pearl.get()*100).withColor(0xdfbc12));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
         list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));

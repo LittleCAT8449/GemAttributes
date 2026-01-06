@@ -31,7 +31,7 @@ public class Amber extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.AMBER.toStack(), Config.Amber_Value.get(),"ADD_VALUE","burning_time");
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.AMBER.toStack(), Config.Amber_Value.get(),"ADD_MULTIPLIED_BASE","burning_time");
             //Remove First
             attributes.getInstance(Attributes.BURNING_TIME).removeModifier(modifier);
             attributes.getInstance(Attributes.BURNING_TIME).addTransientModifier(modifier);
@@ -48,7 +48,7 @@ public class Amber extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.AMBER.toStack(), Config.Amber_Value.get(),"ADD_VALUE","burning_time");
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.AMBER.toStack(), Config.Amber_Value.get(),"ADD_MULTIPLIED_BASE","burning_time");
             attributes.getInstance(Attributes.BURNING_TIME).removeModifier(modifier);
             attributes.getInstance(Attributes.BURNING_TIME).addTransientModifier(modifier);
         }
@@ -56,7 +56,7 @@ public class Amber extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.burning_time",Config.Amber_Value.get()).withColor(0xfd832c));
+        list.add(Component.translatable("tooltip.gemstoneengraving.burning_time",Config.Amber_Value.get()*100).withColor(0xfd832c));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
         list.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));

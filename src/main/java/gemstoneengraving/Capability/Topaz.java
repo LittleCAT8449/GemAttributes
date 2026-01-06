@@ -33,7 +33,7 @@ public class Topaz extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TOPAZ.toStack(), Config.Topaz.get(),"ADD_VALUE","attack_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TOPAZ.toStack(), Config.Topaz.get(),"ADD_MULTIPLIED_BASE","oxygen_bonus");
             //Remove First
             attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
             attributes.getInstance(Attributes.OXYGEN_BONUS).addTransientModifier(modifier);
@@ -50,7 +50,7 @@ public class Topaz extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TOPAZ.toStack(), Config.Topaz.get(),"ADD_VALUE","attack_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.TOPAZ.toStack(), Config.Topaz.get(),"ADD_MULTIPLIED_BASE","oxygen_bonus");
             attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
             attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
         }
@@ -58,7 +58,7 @@ public class Topaz extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.oxygen_bonus",Config.Topaz.get()).withColor(0x0097a7));
+        list.add(Component.translatable("tooltip.gemstoneengraving.oxygen_bonus",Config.Topaz.get()*100).withColor(0x0097a7));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
         list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));

@@ -36,7 +36,7 @@ public class Sapphire extends Item implements ICurioItem {
 
         if(entity!=null){
 
-            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.SAPPHIRE.toStack(), Config.Sapphire.get(),"ADD_VALUE","attack_speed");
+            AttributeModifier modifier= CuriosMath.setAttributes(slotContext,ItemRegistery.SAPPHIRE.toStack(), Config.Sapphire.get(),"ADD_MULTIPLIED_BASE","attack_speed");
             //Remove First
             attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
@@ -53,7 +53,7 @@ public class Sapphire extends Item implements ICurioItem {
         AttributeMap attributes = entity.getAttributes();
 
         if(entity!=null){
-            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.SAPPHIRE.toStack(), Config.Sapphire.get(),"ADD_VALUE","attack_speed");
+            AttributeModifier modifier=CuriosMath.setAttributes(slotContext,ItemRegistery.SAPPHIRE.toStack(), Config.Sapphire.get(),"ADD_MULTIPLIED_BASE","attack_speed");
             attributes.getInstance(Attributes.ATTACK_SPEED).removeModifier(modifier);
             attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
         }
@@ -61,7 +61,7 @@ public class Sapphire extends Item implements ICurioItem {
     @Override
     public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",Config.Sapphire.get()).withColor(0x1de8df));
+        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",Config.Sapphire.get()*100).withColor(0x1de8df));
         list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
         list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
         list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
