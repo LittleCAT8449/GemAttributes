@@ -18,6 +18,7 @@ public class WaterBreathing {
             if (CurioUtils.isCurio(player, ItemRegistery.CONCH_PEARL.get())
                 &&CurioUtils.isCurio(player,ItemRegistery.AQUAMARINE.get())
                 &&CurioUtils.isCurio(player,ItemRegistery.TOPAZ.get())){
+                boolean isEquipped=true;
 
                 event.getEntity().addEffect(water_breathing.get());
 

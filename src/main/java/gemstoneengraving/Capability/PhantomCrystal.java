@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class PhantomCrystal extends Item implements ICurioItem {
+public class PhantomCrystal extends Item implements ICurioItem, ToolTip {
     public PhantomCrystal(Properties properties) {
         super(properties);
     }
@@ -52,15 +53,12 @@ public class PhantomCrystal extends Item implements ICurioItem {
             attributes.getInstance(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",Config.PhantomCrystal.get()*100).withColor(0x5530a5));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
-        list.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.explosion_resistance",Config.PhantomCrystal.get()*100).withColor(0x5530a5));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));
     }
-
-
 }

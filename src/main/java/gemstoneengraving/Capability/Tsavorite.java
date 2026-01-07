@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Tsavorite extends Item implements ICurioItem {
+public class Tsavorite extends Item implements ICurioItem , ToolTip {
     public Tsavorite(Properties properties) {
         super(properties);
     }
@@ -53,16 +54,12 @@ public class Tsavorite extends Item implements ICurioItem {
             attributes.getInstance(Attributes.LUCK).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.luck",Config.Tsavorite.get()).withColor(0x6bff65));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
-        list.add(Component.translatable("tooltip.gemstoneengraving.resistance").withColor(0x8cf6fa));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.luck",Config.Tsavorite.get()).withColor(0x6bff65));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.resistance").withColor(0x8cf6fa));
     }
-
 }

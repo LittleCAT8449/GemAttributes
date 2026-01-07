@@ -13,6 +13,7 @@ public class JumpResistance {
         if (event.getEntity() instanceof Player player){
             if(CurioUtils.isCurio(player, ItemRegistery.JADE.get())&&CurioUtils.isCurio(player,ItemRegistery.HELVITE.get())) {
                 if (event.getSource().is(DamageTypes.FALL)) {
+                    boolean isEquipped=true;
 
                     event.setNewDamage(0);
 

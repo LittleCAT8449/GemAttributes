@@ -20,6 +20,7 @@ public class GuaranteedDamage {
             LOGGER.info("Damage Refix Successfully1");
             if(CurioUtils.isCurio(player, ItemRegistery.MICA.get())
                   &&CurioUtils.isCurio(player, ItemRegistery.CATSEYE.get())) {
+                boolean isEquipped=true;
 
                 float playerAttackDamage = (float) (event.getEntity().getMaxHealth() * Config.GuaranteedDamage.get());
                 LOGGER.info("Damage Refix Successfully2");

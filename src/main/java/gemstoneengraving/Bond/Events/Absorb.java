@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 public class Absorb {
     //Luck
     public static final Logger LOGGER = LogManager.getLogger();
+    public static boolean isEquipped=false;
 
     public static void getMoreXpEvent(PlayerXpEvent.PickupXp event){
         if(event.getEntity() instanceof Player player){
@@ -22,6 +23,7 @@ public class Absorb {
 
                 event.getOrb().value= event.getOrb().value* Config.Absorb.get();
                 LOGGER.info("XP Refix "+event.getOrb().value+"Value");
+                isEquipped=true;
 
             }
         }

@@ -1,22 +1,20 @@
-package gemstoneengraving.Bond;
+package gemstoneengraving.Event;
 
 import gemstoneengraving.Bond.Events.*;
 
-import gemstoneengraving.Config;
 import gemstoneengraving.Gemstoneengraving;
 import net.neoforged.bus.api.SubscribeEvent;
 
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.config.ModConfigEvent;
-import net.neoforged.neoforge.event.GrindstoneEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 
 
 @Mod(Gemstoneengraving.MODID)
-public class BondListener {
+public class EventListener {
 
     @SubscribeEvent
     public static void onLivingHurtEventPre(LivingDamageEvent.Pre event){
@@ -47,6 +45,10 @@ public class BondListener {
         WaterBreathing.onWaterBreathing(event);
         ImmuneHarm.onImmuneHarm(event);
         Invisible.onNightVision(event);
+    }
+    @SubscribeEvent
+    public static void onToolTip(ItemTooltipEvent event){
+        ToolTipEvent.onToolTip(event);
     }
 
 

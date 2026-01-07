@@ -23,6 +23,7 @@ public class ImmuneHarm {
           if (CurioUtils.isCurio(player, ItemRegistery.JADE.get())
             && CurioUtils.isCurio(player,ItemRegistery.CONCH_PEARL.get())
            && CurioUtils.isCurio(player,ItemRegistery.MAHENGE.get())){
+              boolean isEquipped=true;
 
                 if(player.hasEffect(MobEffects.POISON)||player.hasEffect(MobEffects.WITHER)
                 ||player.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)||player.hasEffect(MobEffects.BLINDNESS)){

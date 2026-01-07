@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class ConchPearl extends Item implements ICurioItem {
+public class ConchPearl extends Item implements ICurioItem, ToolTip {
     public ConchPearl(Properties properties) {
         super(properties);
     }
@@ -72,17 +73,12 @@ public class ConchPearl extends Item implements ICurioItem {
             attributes.getInstance(NeoForgeMod.SWIM_SPEED).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",Config.Conch_Pearl.get()*100).withColor(0xdfbc12));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
-        list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.swim_speed",Config.Conch_Pearl.get()*100).withColor(0xdfbc12));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
     }
-
-
 }

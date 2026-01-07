@@ -19,6 +19,7 @@ public class HealthRecover {
         if(event.getEntity() instanceof Player player){
 
             if(CurioUtils.isCurio(player, ItemRegistery.SPINEL.get())&&CurioUtils.isCurio(player, ItemRegistery.MAHENGE.get())) {
+                boolean isEquipped=true;
 
                 if(player.getHealth() < player.getMaxHealth()*Config.HealthRecover_Duration_Multiple.get()) {
 

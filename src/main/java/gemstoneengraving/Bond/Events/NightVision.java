@@ -16,6 +16,7 @@ public class NightVision {
 
         if(event.getEntity() instanceof Player player) {
             if(CurioUtils.isCurio(player, ItemRegistery.CATSEYE.get())) {
+                boolean isEquipped=true;
                 event.getEntity().addEffect(night_vision.get());
             }
         }

@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Aquamarine extends Item implements ICurioItem {
+public class Aquamarine extends Item implements ICurioItem, ToolTip {
     public Aquamarine(Properties properties) {
         super(properties);
     }
@@ -53,17 +54,14 @@ public class Aquamarine extends Item implements ICurioItem {
             attributes.getInstance(Attributes.WATER_MOVEMENT_EFFICIENCY).addTransientModifier(modifier);
         }
     }
+
+
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",Config.Aquamarine_Value.get()*100).withColor(0x0060ff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
-        list.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.water_movement_efficiency",Config.Aquamarine_Value.get()*100).withColor(0x0060ff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));
     }
-
-
 }

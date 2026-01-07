@@ -18,6 +18,7 @@ public class TheLastGasp {
         if(event.getEntity() instanceof Player player){
 
             if(CurioUtils.isCurio(player, ItemRegistery.SPINEL.get())&&CurioUtils.isCurio(player, ItemRegistery.MICA.get())) {
+                boolean isEquipped=true;
 
                 if(player.getHealth() < player.getMaxHealth()*Config.The_Last_Gasp_Health.get()){
 

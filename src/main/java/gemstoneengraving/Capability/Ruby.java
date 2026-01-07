@@ -5,6 +5,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
@@ -17,11 +18,12 @@ import net.minecraft.world.item.TooltipFlag;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
+import javax.tools.Tool;
 import java.util.List;
 
 
 
-public class Ruby extends Item implements ICurioItem {
+public class Ruby extends Item implements ICurioItem, ToolTip {
     public Ruby(Properties properties) {
         super(properties);
     }
@@ -56,16 +58,12 @@ public class Ruby extends Item implements ICurioItem {
            attributes.getInstance(Attributes.ATTACK_DAMAGE).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_damage",Config.Ruby.get()).withColor(0xe8281d));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.attack_damage",Config.Ruby.get()).withColor(0xe8281d));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bloodthirst").withColor(0xff5c00));
     }
-
 }

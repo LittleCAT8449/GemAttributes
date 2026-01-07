@@ -56,6 +56,7 @@
 
   "curios.identifier.gemstone": "宝石",
 
-  "itemGroup.Gemstone": "宝石属性"
+  "itemGroup.Gemstone": "宝石属性",
+  "tooltip.gemstoneengraving.tip.press_alt": "按住 [左Alt] 键查看详细信息"
 
 }

@@ -20,6 +20,7 @@ public class Perseverance {
         if(event.getEntity() instanceof Player player) {
             if (CurioUtils.isCurio(player, ItemRegistery.PARTSCHINITE.get())
                     && CurioUtils.isCurio(player, ItemRegistery.PHANTOM_CRYSTAL.get())) {
+                boolean isEquipped=true;
                 float getOriginalDamage = event.getOriginalDamage();
                 float getPlayerHealth = player.getHealth();
                 float getPlayerXp = player.experienceLevel;

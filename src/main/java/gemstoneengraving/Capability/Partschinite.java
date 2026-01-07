@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Partschinite extends Item implements ICurioItem {
+public class Partschinite extends Item implements ICurioItem, ToolTip {
 
 
     public Partschinite(Properties properties) {
@@ -55,13 +56,13 @@ public class Partschinite extends Item implements ICurioItem {
             attributes.getInstance(Attributes.ARMOR).addTransientModifier(modifier);
         }
     }
-    @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
 
-        list.add(Component.translatable("tooltip.gemstoneengraving.armor",Config.Partschinite.get()).withColor(0xea0c0c));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));
-        list.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));
+    @Override
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.armor",Config.Partschinite.get()).withColor(0xea0c0c));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.perseverance").withColor(0xb7bc00));
 
 
 

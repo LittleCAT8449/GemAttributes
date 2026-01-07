@@ -17,6 +17,7 @@ public class Slash {
         if(event.getSource().getEntity() instanceof Player player){
             if(CurioUtils.isCurio(player, ItemRegistery.SLIME_CORE.get())
                     &&CurioUtils.isCurio(player,ItemRegistery.SAPPHIRE.get())){
+                boolean isEquipped=true;
 
                     if(event.getEntity().getHealth()<event.getEntity().getHealth()* Config.Slash_Under.get()){
                     if(player.getRandom().nextDouble() <Config.Slash_Probability.get()){

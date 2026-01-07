@@ -1,9 +1,11 @@
 package gemstoneengraving.Capability;
 
 import gemstoneengraving.Bond.CurioUtils;
+import gemstoneengraving.Bond.Events.Absorb;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +20,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Amber extends Item implements ICurioItem {
+public class Amber extends Item implements ICurioItem , ToolTip {
     public Amber(Properties properties) {
         super(properties);
     }
@@ -53,18 +55,13 @@ public class Amber extends Item implements ICurioItem {
             attributes.getInstance(Attributes.BURNING_TIME).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.burning_time",Config.Amber_Value.get()*100).withColor(0xfd832c));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
-        list.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.burning_time",Config.Amber_Value.get()*100).withColor(0xfd832c));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.abhor").withColor(0x8f8f8f));
     }
-
-
 }
 

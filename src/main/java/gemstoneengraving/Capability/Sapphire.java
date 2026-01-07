@@ -5,6 +5,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
@@ -21,7 +22,7 @@ import java.util.List;
 
 
 
-public class Sapphire extends Item implements ICurioItem {
+public class Sapphire extends Item implements ICurioItem, ToolTip {
     public Sapphire(Properties properties) {
         super(properties);
     }
@@ -58,16 +59,12 @@ public class Sapphire extends Item implements ICurioItem {
             attributes.getInstance(Attributes.ATTACK_SPEED).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context,List<Component> list,TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",Config.Sapphire.get()*100).withColor(0x1de8df));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
-        list.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.attack_speed",Config.Sapphire.get()*100).withColor(0x1de8df));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.frenzy").withColor(0xffa542));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.slash").withColor(0xf33ab0));
     }
-
 }

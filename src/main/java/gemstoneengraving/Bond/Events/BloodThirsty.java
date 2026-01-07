@@ -19,7 +19,7 @@ public class BloodThirsty {
             float damage =event.getOriginalDamage()/ Config.BloodThirsty.get();
           if(CurioUtils.isCurio(player, ItemRegistery.PHANTOM_CRYSTAL.get())&&CurioUtils.isCurio(player, ItemRegistery.RUBY.get())){
 
-
+              boolean isEquipped=true;
                 player.setHealth(Math.min(player.getHealth()+damage,player.getMaxHealth()));
                 LOGGER.info("BloodThirsty"+damage+"Value");
 

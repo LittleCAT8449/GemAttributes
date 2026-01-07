@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Topaz extends Item implements ICurioItem {
+public class Topaz extends Item implements ICurioItem, ToolTip {
 
 
     public Topaz(Properties properties) {
@@ -55,15 +56,12 @@ public class Topaz extends Item implements ICurioItem {
             attributes.getInstance(Attributes.OXYGEN_BONUS).removeModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.oxygen_bonus",Config.Topaz.get()*100).withColor(0x0097a7));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
-        list.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.oxygen_bonus",Config.Topaz.get()*100).withColor(0x0097a7));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.absorb").withColor(0xb2fb82));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.waterbreathing").withColor(0x7494fb));
     }
 }

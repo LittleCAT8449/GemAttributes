@@ -57,7 +57,8 @@
   "tooltip.gemstoneengraving.resistance": "Resistance",
 
   "curios.identifier.gemstone": "Gemstone",
-  "itemGroup.Gemstone": "Gemstone"
+  "itemGroup.Gemstone": "Gemstone",
+  "tooltip.gemstoneengraving.tip.press_alt": "Press [LEFT ALT] to display detailed information"
 
 
 

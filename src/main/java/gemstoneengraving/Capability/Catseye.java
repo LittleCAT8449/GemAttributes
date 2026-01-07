@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Catseye extends Item implements ICurioItem {
+public class Catseye extends Item implements ICurioItem , ToolTip {
     public Catseye(Properties properties) {
         super(properties);
     }
@@ -73,16 +74,13 @@ public class Catseye extends Item implements ICurioItem {
         }
     }
 
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.sneaking_speed",Config.Cats_Eye.get()*100).withColor(0x0097a7));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.nightvision").withColor(0x6fdb16));
-        list.add(Component.translatable("tooltip.gemstoneengraving.Fixed").withColor(0x204300));
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.sneaking_speed",Config.Cats_Eye.get()*100).withColor(0x0097a7));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.nightvision").withColor(0x6fdb16));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.Fixed").withColor(0x204300));
 
     }
-
 }

@@ -20,6 +20,7 @@ public class Wither {
         if(event.getSource().getEntity() instanceof Player player){
             if(CurioUtils.isCurio(player, ItemRegistery.AMBER.get())
                 &&CurioUtils.isCurio(player,ItemRegistery.PARTSCHINITE.get())) {
+                boolean isEquipped=true;
                 event.getEntity().addEffect(wither.get());
                 LOGGER.info(("Abhor Successfully"));
             }

@@ -19,6 +19,7 @@ public class Frenzy {
 
           if (event.getSource().getEntity() instanceof Player player) {
               ;if (CurioUtils.isCurio(player, ItemRegistery.RUBY.get())&&CurioUtils.isCurio(player, ItemRegistery.SAPPHIRE.get())) {
+                  boolean isEquipped=true;
                 float new_damage = (float) (event.getOriginalDamage() * Config.Frenzy.get());
                 LOGGER.info("Damage Refix Successfully");
                 event.setNewDamage(new_damage);

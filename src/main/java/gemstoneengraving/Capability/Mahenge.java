@@ -5,6 +5,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -19,7 +20,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Mahenge extends Item implements ICurioItem {
+public class Mahenge extends Item implements ICurioItem, ToolTip {
     public Mahenge(Properties properties) {
         super(properties);
     }
@@ -55,17 +56,12 @@ public class Mahenge extends Item implements ICurioItem {
             attributes.getInstance(Attributes.ENTITY_INTERACTION_RANGE).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.entity_interaction_range",Config.Mahenge.get()*100).withColor(0xfd64a4));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.heal").withColor(0x81db47));
-        list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
-
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.entity_interaction_range",Config.Mahenge.get()*100).withColor(0xfd64a4));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.heal").withColor(0x81db47));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
     }
-
 }

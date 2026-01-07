@@ -18,6 +18,7 @@ public class Invisible {
            if(CurioUtils.isCurio(player, ItemRegistery.AQUAMARINE.get())
                     &&CurioUtils.isCurio(player,ItemRegistery.HELVITE.get())
                     &&player.isShiftKeyDown()) {
+               boolean isEquipped=true;
                 event.getEntity().addEffect(invisible.get());
             }
         }

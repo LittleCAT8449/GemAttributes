@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Jade extends Item implements ICurioItem {
+public class Jade extends Item implements ICurioItem , ToolTip {
 
 
     public Jade(Properties properties) {
@@ -74,16 +75,12 @@ public class Jade extends Item implements ICurioItem {
             attributes.getInstance(Attributes.SAFE_FALL_DISTANCE).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.safe_fall_distance",Config.Jade.get()).withColor(0xe8281d));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
-        list.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.safe_fall_distance",Config.Jade.get()).withColor(0xe8281d));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.immune").withColor(0xfd4d96));
     }
-
 }

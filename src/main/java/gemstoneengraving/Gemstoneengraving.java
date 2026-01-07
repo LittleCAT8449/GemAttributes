@@ -1,22 +1,15 @@
 package gemstoneengraving;
 
 import com.mojang.logging.LogUtils;
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.MapCodec;
-import gemstoneengraving.Bond.BondListener;
+import gemstoneengraving.Event.EventListener;
 import gemstoneengraving.Item.ItemRegistery;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.slf4j.Logger;
-
-import java.util.function.Supplier;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Gemstoneengraving.MODID)
@@ -41,7 +34,7 @@ public class Gemstoneengraving {
         GemGroup.register(modEventBus);
 
 
-        NeoForge.EVENT_BUS.register(BondListener.class);
+        NeoForge.EVENT_BUS.register(EventListener.class);
 
 
 

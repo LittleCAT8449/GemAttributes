@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Helvite extends Item implements ICurioItem {
+public class Helvite extends Item implements ICurioItem, ToolTip {
     public Helvite(Properties properties) {
         super(properties);
     }
@@ -53,16 +54,12 @@ public class Helvite extends Item implements ICurioItem {
             attributes.getInstance(Attributes.MOVEMENT_SPEED).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",Config.Helvite.get()*100).withColor(0x0097a7));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
-        list.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.movement_speed",Config.Helvite.get()*100).withColor(0x0097a7));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.jumpresistance").withColor(0x69fbdd));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.invisible").withColor(0xca8cfa));
     }
-
 }

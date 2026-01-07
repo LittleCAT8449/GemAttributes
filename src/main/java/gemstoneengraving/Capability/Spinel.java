@@ -4,6 +4,7 @@ import gemstoneengraving.Bond.CurioUtils;
 import gemstoneengraving.Config;
 import gemstoneengraving.CuriosMath;
 import gemstoneengraving.Item.ItemRegistery;
+import gemstoneengraving.api.ToolTip;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.List;
 
-public class Spinel extends Item implements ICurioItem {
+public class Spinel extends Item implements ICurioItem, ToolTip {
     public Spinel(Properties properties) {
         super(properties);
     }
@@ -53,19 +54,12 @@ public class Spinel extends Item implements ICurioItem {
             attributes.getInstance(Attributes.BLOCK_INTERACTION_RANGE).addTransientModifier(modifier);
         }
     }
+
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext context, List<Component> list, TooltipFlag tip ) {
-
-        list.add(Component.translatable("tooltip.gemstoneengraving.block_interaction_range",Config.Spinel.get()*100).withColor(0x2eb7ff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
-        list.add(Component.translatable("tooltip.gemstoneengraving.heal").withColor(0x81db47));
-        list.add(Component.translatable("tooltip.gemstoneengraving.thelastgasp").withColor(0xffe567));
-
-
-
-
+    public void addToolTip(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.block_interaction_range",Config.Spinel.get()*100).withColor(0x2eb7ff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.bond").withColor(0xffffff));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.heal").withColor(0x81db47));
+        tooltip.add(Component.translatable("tooltip.gemstoneengraving.thelastgasp").withColor(0xffe567));
     }
-
-
-
 }

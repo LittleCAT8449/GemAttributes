@@ -13,6 +13,7 @@ public class Resistance {
         if(event.getEntity() instanceof Player player){
             if(CurioUtils.isCurio(player, ItemRegistery.SLIME_CORE.get())
             &&CurioUtils.isCurio(player,ItemRegistery.TSAVORITE.get())) {
+                boolean isEquipped=true;
                 float new_damage = (float) (event.getOriginalDamage() * Config.Resistance.get());
                 event.setNewDamage(new_damage);
             }
